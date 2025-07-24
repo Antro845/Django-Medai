@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-l737sj)-r+9m@s%1bwt_9=5(6trpv%mfehu1o_d#clkx-x5k@d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'django-medai.onrender.com']
 
 
 # Application definition
