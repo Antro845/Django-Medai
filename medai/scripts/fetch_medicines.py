@@ -48,7 +48,7 @@ def fetch_and_insert(indication, limit=10):
             "fever", "pain", "headache", "nausea", "cough", "vomiting", "diarrhea",
             "dizziness", "sore throat", "inflammation", "muscle pain", "body pain",
             "fatigue", "cold", "congestion", "chills", "rash", "itching", "anxiety",
-            "depression", "insomnia", "weakness"
+            "depression", "insomnia", "weakness","thyroid","hyperthyroidism"
         }
 
 # After extracting words from text
