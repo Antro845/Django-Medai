@@ -44,7 +44,7 @@ class Command(BaseCommand):
             {
                 "name": "Homeopathic Cold Relief",
                 "description": "Homeopathic medicine made from a combination of ingredients traditionally used to relieve symptoms associated with cough and cold: dry cough, cough with expectoration, chest congestion, fever, aches, and pains.",
-                "symptoms": ["dry cough", "wet cough", "chest congestion", "fever", "aches"]
+                "symptoms": ["dry cough", "wet cough", "cough", "chest congestion", "fever", "aches"]
             },
               
             {
@@ -55,22 +55,22 @@ class Command(BaseCommand):
             {
                 "name": "Dextromethorphan",
                 "description": "A cough suppressant used to treat dry cough by affecting the signals in the brain that trigger cough reflex.",
-                "symptoms": ["dry cough", "irritating cough", "throat irritation"]
+                "symptoms": ["dry cough", "cough", "irritating cough", "throat irritation"]
             },
             {
                 "name": "Guaifenesin",
                 "description": "An expectorant used to thin mucus in the airways, making it easier to cough up phlegm.",
-                "symptoms": ["wet cough", "chest congestion", "phlegm"]
+                "symptoms": ["wet cough", "cough", "chest congestion", "phlegm"]
             },
             {
                 "name": "Hyoscine Butylbromide",
                 "description": "Used to relieve abdominal cramps, stomach pain, and menstrual cramps by relaxing the muscles of the gastrointestinal tract.",
-                "symptoms": ["stomach cramps", "abdominal pain", "menstrual cramps"]
+                "symptoms": ["stomach cramps", "cramps", "abdominal pain", "menstrual cramps"]
             },
             {
                 "name": "Ibuprofen",
                 "description": "A nonsteroidal anti-inflammatory drug (NSAID) used to reduce inflammation and relieve pain, including menstrual and muscle cramps.",
-                "symptoms": ["muscle cramps", "menstrual pain", "fever", "body ache"]
+                "symptoms": ["muscle cramps", "cramps", "menstrual pain", "fever", "body ache"]
             },
             {
                 "name": "Metformin",
@@ -80,7 +80,7 @@ class Command(BaseCommand):
             {
                 "name": "Loperamide",
                 "description": "Used to treat sudden diarrhea. It works by slowing down the movement of the gut.",
-                "symptoms": ["diarrhea", "stomach cramps", "loose stool"]
+                "symptoms": ["diarrhea", "stomach cramps", "cramps", "loose stool"]
             },
             {
                 "name": "Loratadine",
