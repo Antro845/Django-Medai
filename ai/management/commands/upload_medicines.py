@@ -95,8 +95,38 @@ class Command(BaseCommand):
                 "name": "Hydroxyzine",
                 "description": "Used to treat anxiety, nausea, allergies, skin rash, hives, and itching.",
                 "symptoms": ["anxiety", "itching", "hives", "nausea", "rash"]
+            },
+            {
+                "name": "Levothyroxine",
+                "description": "Synthetic form of the thyroid hormone T4; used to treat hypothyroidism by normalizing hormone levels.",
+                "symptoms": ["fatigue", "weight gain", "cold intolerance", "constipation", "dry skin"]
+            },
+            {
+                "name": "Liothyronine",
+                "description": "Synthetic form of the T3 hormone; sometimes used in combination with Levothyroxine for better symptom control in hypothyroidism.",
+                "symptoms": ["depression", "low energy", "brain fog", "slow heart rate"]
+            },
+            {
+                "name": "Armour Thyroid",
+                "description": "Natural desiccated thyroid (NDT) from pig thyroid glands; contains both T3 and T4 hormones.",
+                "symptoms": ["sluggishness", "memory issues", "hoarseness", "weight gain"]
+            },
+            {
+                "name": "Methimazole",
+                "description": "Antithyroid medication used to treat hyperthyroidism by inhibiting the production of thyroid hormones.",
+                "symptoms": ["tremors", "heat intolerance", "rapid heartbeat", "weight loss"]
+            },
+            {
+                "name": "Propylthiouracil (PTU)",
+                "description": "Used to treat hyperthyroidism; blocks thyroid hormone production and conversion of T4 to T3.",
+                "symptoms": ["irritability", "insomnia", "sweating", "diarrhea"]
+            },
+            {
+                "name": "Beta-blockers (e.g., Propranolol)",
+                "description": "Not a direct thyroid treatment, but helps manage symptoms of hyperthyroidism like palpitations and anxiety.",
+                "symptoms": ["palpitations", "shaking", "anxiety", "high blood pressure"]
             }
-                   ]
+                ]
 
         inserted_count = 0
         for med in medicines:
