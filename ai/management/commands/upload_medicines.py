@@ -28,13 +28,9 @@ class Command(BaseCommand):
             {
                 "name": "Paracetamol",
                 "description": "Used for fever and mild pain.",
-                "symptoms": ["fever", "headache", "body pain"]
+                "symptoms": ["fever", "cold", "headache", "body pain"]
             },
-            {
-                "name": "Ibuprofen",
-                "description": "Used to reduce fever and treat pain or inflammation.",
-                "symptoms": ["fever", "inflammation", "muscle pain"]
-            },
+            
             {
                 "name": "Amoxicillin",
                 "description": "Antibiotic used for bacterial infections.",
@@ -54,7 +50,27 @@ class Command(BaseCommand):
             {
                 "name": "Cetirizine",
                 "description": "Used to relieve allergy symptoms such as runny nose, sneezing, and itchy or watery eyes.",
-                "symptoms": ["allergy", "runny nose", "sneezing", "itchy eyes"]
+                "symptoms": ["allergy", "cold", "runny nose", "sneezing", "itchy eyes"]
+            },
+            {
+                "name": "Dextromethorphan",
+                "description": "A cough suppressant used to treat dry cough by affecting the signals in the brain that trigger cough reflex.",
+                "symptoms": ["dry cough", "irritating cough", "throat irritation"]
+            },
+            {
+                "name": "Guaifenesin",
+                "description": "An expectorant used to thin mucus in the airways, making it easier to cough up phlegm.",
+                "symptoms": ["wet cough", "chest congestion", "phlegm"]
+            },
+            {
+                "name": "Hyoscine Butylbromide",
+                "description": "Used to relieve abdominal cramps, stomach pain, and menstrual cramps by relaxing the muscles of the gastrointestinal tract.",
+                "symptoms": ["stomach cramps", "abdominal pain", "menstrual cramps"]
+            },
+            {
+                "name": "Ibuprofen",
+                "description": "A nonsteroidal anti-inflammatory drug (NSAID) used to reduce inflammation and relieve pain, including menstrual and muscle cramps.",
+                "symptoms": ["muscle cramps", "menstrual pain", "fever", "body ache"]
             },
             {
                 "name": "Metformin",
