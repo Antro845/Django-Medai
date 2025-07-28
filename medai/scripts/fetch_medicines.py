@@ -14,7 +14,7 @@ known_symptoms = {
     "fever", "pain", "headache", "nausea", "cough", "vomiting", "diarrhea",
     "dizziness", "sore throat", "inflammation", "muscle pain", "body pain",
     "fatigue", "cold", "congestion", "chills", "rash", "itching", "anxiety",
-    "depression", "insomnia", "weakness", "thyroid", "hyperthyroidism"
+    "depression", "insomnia", "weakness", "thyroid", "hyperthyroidism", "dry cough", "wet cough"
 }
 
 def fetch_and_insert(data):
