@@ -45,8 +45,11 @@ def fetch_and_insert(data):
 
         full_text = f"{indications} {description}".lower()
 
-        # ✅ Match full known symptoms
-        symptoms = [symptom for symptom in known_symptoms if symptom in full_text]
+        # New way: check full phrases
+        symptoms = []
+        for symptom in known_symptoms:
+            if symptom in full_text:
+                symptoms.append(symptom)
 
         doc = {
             "name": name,
@@ -59,3 +62,4 @@ def fetch_and_insert(data):
             inserted_docs.append(doc)
 
     return inserted_docs
+
