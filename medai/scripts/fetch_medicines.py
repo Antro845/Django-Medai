@@ -31,7 +31,7 @@ known_symptoms = {
     "bleeding gums", "high cholesterol", "high blood pressure", "stroke", "tremors",
     "paralysis", "numbness", "slurred speech", "unconsciousness", "sensitivity to light",
     "facial twitching", "gut inflammation", "sun sensitivity", "ulcers", "mood instability",
-    "involuntary movements"
+    "involuntary movements", "cattaract"
 }
 
 
@@ -45,8 +45,8 @@ def fetch_and_insert(data):
 
         full_text = f"{indications} {description}".lower()
 
-        possible_words = re.findall(r"\b[a-z]{4,}\b", full_text)
-        symptoms = list(set([word for word in possible_words if word in known_symptoms]))
+        # ✅ Match full known symptoms
+        symptoms = [symptom for symptom in known_symptoms if symptom in full_text]
 
         doc = {
             "name": name,

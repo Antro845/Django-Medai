@@ -73,11 +73,6 @@ class Command(BaseCommand):
                 "symptoms": ["muscle cramps", "toothache", "cramps", "menstrual pain", "fever", "body ache"]
             },
             {
-                "name": "Metformin",
-                "description": "Used to control high blood sugar in people with type 2 diabetes.",
-                "symptoms": ["type 2 diabetes", "high blood sugar", "insulin resistance"]
-            },
-            {
                 "name": "Loperamide",
                 "description": "Used to treat sudden diarrhea. It works by slowing down the movement of the gut.",
                 "symptoms": ["diarrhea", "stomach cramps", "cramps", "loose stool"]
