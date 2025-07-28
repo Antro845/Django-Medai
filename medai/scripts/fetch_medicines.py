@@ -14,8 +14,26 @@ known_symptoms = {
     "fever", "pain", "headache", "nausea", "cough", "vomiting", "diarrhea",
     "dizziness", "sore throat", "inflammation", "muscle pain", "body pain",
     "fatigue", "cold", "congestion", "chills", "rash", "itching", "anxiety",
-    "depression", "insomnia", "weakness", "thyroid", "hyperthyroidism", "dry cough", "wet cough"
+    "depression", "insomnia", "weakness", "thyroid", "hyperthyroidism", "dry cough", "wet cough",
+    "irritability", "sweating", "insomnia", "blisters", "skin rash", "joint pain",
+    "swelling", "convulsions", "seizures", "loss of consciousness", "loss of awareness",
+    "epilepsy", "autoimmune flare", "organ swelling", "stomach acidity", "acid reflux",
+    "chest discomfort", "indigestion", "ear infection", "earache", "ear discharge",
+    "hearing difficulty", "pus discharge", "itchy rash", "fatigue", "burning sensation",
+    "stomach irritation", "bloating", "fullness after eating", "high blood sugar",
+    "frequent urination", "blurred vision", "tingling", "wound healing delay",
+    "joint swelling", "gut inflammation", "skin plaques", "memory loss", "confusion",
+    "loss of memory", "difficulty concentrating", "behavioral issues", "communication delay",
+    "social withdrawal", "learning disability", "low immunity", "persistent infections",
+    "immune flare", "neurological symptoms", "vision problems", "eye redness",
+    "swollen glands", "internal bleeding", "low platelet count", "severe headache",
+    "muscle spasms", "neck stiffness", "muscle cramps", "back pain", "tooth pain",
+    "bleeding gums", "high cholesterol", "high blood pressure", "stroke", "tremors",
+    "paralysis", "numbness", "slurred speech", "unconsciousness", "sensitivity to light",
+    "facial twitching", "gut inflammation", "sun sensitivity", "ulcers", "mood instability",
+    "involuntary movements"
 }
+
 
 def fetch_and_insert(data):
     inserted_docs = []
