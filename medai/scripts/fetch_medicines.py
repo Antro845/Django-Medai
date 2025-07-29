@@ -15,7 +15,7 @@ known_symptoms = {
     "dizziness", "sore throat", "inflammation", "muscle pain", "body pain",
     "fatigue", "cold", "congestion", "chills", "rash", "itching", "anxiety",
     "depression", "insomnia", "weakness", "thyroid", "hyperthyroidism", "dry cough", "wet cough",
-    "irritability", "sweating", "insomnia", "blisters", "skin rash", "joint pain",
+    "irritability", "sweating", "blisters", "skin rash", "joint pain",
     "swelling", "convulsions", "seizures", "loss of consciousness", "loss of awareness",
     "epilepsy", "autoimmune flare", "organ swelling", "stomach acidity", "acid reflux",
     "chest discomfort", "indigestion", "ear infection", "earache", "ear discharge",
@@ -30,8 +30,8 @@ known_symptoms = {
     "muscle spasms", "neck stiffness", "muscle cramps", "back pain", "tooth pain",
     "bleeding gums", "high cholesterol", "high blood pressure", "stroke", "tremors",
     "paralysis", "numbness", "slurred speech", "unconsciousness", "sensitivity to light",
-    "facial twitching", "gut inflammation", "sun sensitivity", "ulcers", "mood instability",
-    "involuntary movements", "cattaract"
+    "facial twitching", "sun sensitivity", "ulcers", "mood instability",
+    "involuntary movements", "catarract"
 }
 
 
