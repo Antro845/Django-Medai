@@ -228,7 +228,7 @@ header p {
     font-size: 28px;
   }
 
-  .prompt-results {
+  .prompt_result {
     max-height: unset;
     margin-bottom: 40px;
   }
@@ -263,16 +263,31 @@ header p {
   </form>
 </div>
 
-<div id="prompt-response" class="prompt-results">
+<div id="prompt-response" class="prompt_result">
   {% if prompt_response %}
     {% for result in prompt_response %}
       {% if result.type == "medicine" %}
         <div class="result-card">
-          <h3>🧪 Medicine: {{ result.name }}</h3>
-          <p><strong>Description:</strong> {{ result.description }}</p>
-          <p><strong>Symptoms:</strong> {{ result.symptoms|join:", " }}</p><br>
+          <h2>💊 {{ prompt_result.name }}</h2>
+            <p><strong>📝 Description:</strong> {{ result.description }}</p>
+              <p><strong>✅ Advantages:</strong></p>
+          <ul>
+          {% for adv in result.advantages %}
+          <li>{{ adv }}</li>
+          {% endfor %}
+          </ul>
+          <p><strong>⚠️ Disadvantages:</strong></p>
+            <ul>
+            {% for disadv in result.disadvantages %}
+              <li>{{ disadv }}</li>
+            {% endfor %}
+            </ul>
+            <p><strong>🆘 First Aid:</strong> {{ result.first_aid }}</p>
+            <p><strong>🥗 Foods to Eat:</strong> {{ result.foods_to_eat|join:", " }}</p>
+            <p><strong>🚫 Foods to Avoid:</strong> {{ result.foods_to_avoid|join:", " }}</p>
+            <p><strong>🌿 Natural Remedies:</strong> {{ result.natural_remedies|join:", " }}</p><br>
         </div>
-      {% elif result.type == "hospital" %}
+  {% elif result.type == "hospital" %}
         <div class="result-card">
           <h3>🏥 Hospital: {{ result.name }}</h3>
           <p><strong>Address:</strong> {{ result.address }}</p>

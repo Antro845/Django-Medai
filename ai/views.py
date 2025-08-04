@@ -68,36 +68,38 @@ def logout_view(request):
 
 
 def index(request):
-    username = request.session.get('username', 'Guest')  # Fallback if not logged in
-    return render(request, 'index.html', {'username': username})
+    username = request.session.get('username', 'Guest')
+    all_medicines = list(medicines.find({}, {"_id": 0}))  # send all medicines
 
-medicines = db["medicines"]
-
+    return render(request, 'index.html', {
+        'username': username,
+        'prompt_response': [],  # default empty
+        'medicines': all_medicines
+    })
+medicines= db["medicines"]
 
 @csrf_exempt
 def prompt_query(request):
     if request.method == 'POST':
         prompt = request.POST.get('prompt', '').lower()
+        username = request.session.get('username', 'Guest')
         matched_medicines = []
         hospitals = []
 
-        # Location-related keywords
+        # Load all medicines
+        all_medicines = list(medicines.find({}, {"_id": 0}))
+
+        # Detect hospital-related queries
         location_keywords = [
             'nearby', 'hospital in', 'clinic in', 'hospital near', 'emergency in',
             'hospitals', 'hospital', 'hospitals near', 'clinic near', 'clinics near',
             'clinic in', 'clinics in', 'hospital nearby', 'hospitals nearby'
         ]
 
-        # If user is asking for hospitals
-        if any(word in prompt for word in location_keywords):
-            # Try to extract location from prompt
+        if any(keyword in prompt for keyword in location_keywords):
             location_match = re.search(r'in ([\w\s]+)', prompt)
-            if location_match:
-                location = location_match.group(1).strip()
-            else:
-                location = "Tirunelveli"  # default fallback
+            location = location_match.group(1).strip() if location_match else "Tirunelveli"
 
-            # Geocode the location to lat/lng
             geocode_url = f"https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={GOOGLE_API_KEY}"
             geocode_data = requests.get(geocode_url).json()
 
@@ -105,29 +107,24 @@ def prompt_query(request):
                 lat = geocode_data["results"][0]["geometry"]["location"]["lat"]
                 lng = geocode_data["results"][0]["geometry"]["location"]["lng"]
 
-                # Extract specialty if present
                 specialty_match = re.search(r'(heart|eye|cancer|cardiac|orthopedic|neuro|mental|skin|dental)', prompt)
                 specialty = specialty_match.group(1) if specialty_match else ""
 
-                # Build Places API URL
                 places_url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{lng}&radius=5000&type=hospital"
                 if specialty:
                     places_url += f"&keyword={specialty}"
                 places_url += f"&key={GOOGLE_API_KEY}"
 
-                # Fetch nearby hospital data
                 places_data = requests.get(places_url).json()
 
                 if places_data.get("status") == "OK":
                     for place in places_data.get("results", []):
-                        lat = place["geometry"]["location"]["lat"]
-                        lng = place["geometry"]["location"]["lng"]
                         hospitals.append({
                             "type": "hospital",
                             "name": place.get("name", "Unknown"),
                             "address": place.get("vicinity", "N/A"),
                             "rating": place.get("rating", "N/A"),
-                            "map_link": f"https://www.google.com/maps/search/?api=1&query={lat},{lng}"
+                            "map_link": f"https://www.google.com/maps/search/?api=1&query={place['geometry']['location']['lat']},{place['geometry']['location']['lng']}"
                         })
                 else:
                     hospitals.append({
@@ -139,11 +136,12 @@ def prompt_query(request):
                     })
 
                 return render(request, 'index.html', {
+                    'username': username,
                     'prompt_response': hospitals,
-                    'username': request.session.get('username', 'Guest')
+                    'medicines': all_medicines
                 })
 
-        # Else handle symptom → medicine match
+        # If not hospital, match with medicine symptoms
         prompt_words = set(re.findall(r'\w+', prompt.lower()))
         all_docs = db["medicines"].find()
 
@@ -154,19 +152,17 @@ def prompt_query(request):
             if match_count > 0:
                 heapq.heappush(matched_medicines, (-match_count, str(doc.get("_id")), doc))
 
-        matched_medicines.sort(key=lambda x: x[0], reverse=True)
-        top_meds = [summarize_medicine_data(doc) for _, _, doc in matched_medicines[:3]]
+        top_meds = [summarize_medicine_data(doc) for _, _, doc in heapq.nsmallest(3, matched_medicines)]
+
 
         return render(request, 'index.html', {
+            'username': username,
             'prompt_response': top_meds,
-            'username': request.session.get('username', 'Guest')
+            'medicines': all_medicines
         })
 
-    # Default fallback GET
-    return render(request, 'index.html', {
-        'prompt_response': [],
-        'username': request.session.get('username', 'Guest')
-    })
+    return redirect('index')  # fallback to index for GET
+
 
     
 
@@ -179,13 +175,11 @@ def summarize_medicine_data(doc):
     if isinstance(raw_desc, list):
         raw_desc = raw_desc[0] if raw_desc else ""
 
-    raw_desc = str(raw_desc)
-
-    summary_match = re.search(r"(used (to|for) [^.]+?\.)", raw_desc, re.IGNORECASE)
+    summary_match = re.search(r"(used (to|for) [^.]+?\.)", str(raw_desc), re.IGNORECASE)
     if summary_match:
         summary = summary_match.group(1).strip()
     elif raw_desc:
-        summary = raw_desc.split('.')[0].strip() + '.'
+        summary = str(raw_desc).split('.')[0].strip() + '.'
     else:
         summary = "No brief description available."
 
@@ -196,8 +190,15 @@ def summarize_medicine_data(doc):
         "type": "medicine",
         "name": name,
         "description": summary,
-        "symptoms": clean_symptoms
+        "symptoms": clean_symptoms,
+        "advantages": doc.get("advantages", []),
+        "disadvantages": doc.get("disadvantages", []),
+        "first_aid": doc.get("first_aid", "N/A"),
+        "foods_to_eat": doc.get("foods_to_eat", []),
+        "foods_to_avoid": doc.get("foods_to_avoid", []),
+        "natural_remedies": doc.get("natural_remedies", [])
     }
+
 
 
 
