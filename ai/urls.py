@@ -6,5 +6,7 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('', views.index, name='index'),
     path('logout/', views.logout_view, name='logout'),
-    path("prompt/", views.prompt_query, name="prompt_query"),  
+    path("prompt/", views.prompt_query, name="prompt_query"),
+    path('history/', views.user_history, name='user_history'),  
+    path('delete_history/', views.delete_history, name='delete_history'),
 ]

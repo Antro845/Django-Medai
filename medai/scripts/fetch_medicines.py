@@ -2,7 +2,7 @@ import re
 from pymongo import MongoClient
 from decouple import config
 from dotenv import load_dotenv
-
+import string
 load_dotenv()
 
 MONGODB_URI = config("MONGODB_URI")
@@ -11,10 +11,10 @@ db = client["Medai"]
 medicines = db["medicines"]
 
 known_symptoms = {
-    "fever", "pain", "headache", "nausea", "cough", "vomiting", "diarrhea",
+    "fever", "pain", "headache", "nausea", "cough", "vomiting", "diarrhea", "kidney failure",
     "dizziness", "sore throat", "inflammation", "muscle pain", "body pain",
-    "fatigue", "cold", "congestion", "chills", "rash", "itching", "anxiety",
-    "depression", "insomnia", "weakness", "thyroid", "dry cough", "wet cough",
+    "fatigue", "cold", "congestion", "chills", "rash", "itching", "anxiety","anaemia",
+    "depression", "insomnia", "weakness", "thyroid", "hypothyroidism", "hyperthyroidism", "dry cough", "wet cough",
     "irritability", "sweating", "blisters", "skin rash", "joint pain",
     "swelling", "convulsions", "seizures", "loss of consciousness", "loss of awareness",
     "epilepsy", "autoimmune flare", "organ swelling", "stomach acidity", "acid reflux",
@@ -47,9 +47,16 @@ def fetch_and_insert(data):
         foods_to_avoid = item.get("foods_to_avoid", [])
         natural_remedies = item.get("natural_remedies", [])
 
-        combined_text = " ".join(advantages + disadvantages + [first_aid] + foods_to_eat + foods_to_avoid + natural_remedies).lower()
+        description = item.get("description", "")
+        combined_text = " ".join(
+            advantages + disadvantages + [first_aid, description] +
+            foods_to_eat + foods_to_avoid + natural_remedies
+        ).lower()
+       
+        combined_text = combined_text.translate(str.maketrans('', '', string.punctuation))
 
-        symptoms = [symptom for symptom in known_symptoms if symptom in combined_text]
+
+        symptoms = list(set(symptom for symptom in known_symptoms if symptom in combined_text))
 
         doc = {
             "name": name,

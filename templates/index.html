@@ -1,240 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MEDAI</title>
- 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap"
+    rel="stylesheet">
 </head>
 <style>
   * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  height: 100vh;
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #2e004f, #000000);
-  color: #fff;
-  overflow: hidden;
-}
-
-.sidebar {
-  width: 250px;
-  background: #1a0033;
-  padding: 30px 20px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
-  animation: slideInLeft 1s ease;
-}
-
-.sidebar h2 {
-  font-family: 'Playfair Display', serif;
-  color: gold;
-  font-size: 24px;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar ul li {
-  padding: 15px 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  background: transparent;
-  color: #ddd;
-  cursor: pointer;
-  transition: 0.3s;
-  
-}
-
-.sidebar ul li:hover,
-.sidebar ul li.active {
-  background: rgba(255, 215, 0, 0.1);
-  color: gold;
-}
-
-.main {
-  flex: 1;
-  padding: 40px;
-  animation: fadeIn 1.5s ease;
-  overflow-y: auto;
-}
-
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 16px;
-  color: #aaa;
-  margin-bottom: 30px;
-}
-.prompt-bar {
-  position: fixed;
-  bottom: 0;
-  left: 280px;
-  right: 100px;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.prompt-bar form {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  max-width: 800px;
-}
-
-.prompt-bar input[type="text"] {
-  flex: 1;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #2e004f, #000000);
-  color: #fff;
-  font-size: 16px;
-}
-
-.prompt-bar button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 25px;
-  background-color: gold;
-  color: #1a0033;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.prompt-results {
-  margin-top: 10px;
-  padding: 20px;
-  color: #fff;
-  border-radius: 12px;
-  max-height: 380px;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-.prompt-results::-webkit-scrollbar {
-  width: 8px;
-}
-
-.prompt-results::-webkit-scrollbar-track {
-  background:  #000000;
-}
-
-.prompt-results::-webkit-scrollbar-thumb {
-  background: #2e004f;
-  border-radius: 4px;
-}
-
-.prompt-results::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-/* Animations */
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-200px);
-    opacity: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
-@keyframes fadeIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-  }
-}
-@media (max-width: 768px) {
   body {
-    flex-direction: column;
-    overflow: auto;
+    display: flex;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #2e004f, #000000);
+    color: #fff;
+    overflow: hidden;
   }
 
   .sidebar {
-    width: 100%;
-    padding: 20px 15px;
+    width: 250px;
+    background: #1a0033;
+    padding: 30px 20px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    animation: slideInLeft 1s ease;
+  }
+
+  .sidebar h2 {
+    font-family: 'Playfair Display', serif;
+    color: gold;
+    font-size: 24px;
+    margin-bottom: 40px;
     text-align: center;
-    box-shadow: none;
   }
 
   .sidebar ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    list-style: none;
   }
 
   .sidebar ul li {
-    margin: 5px 5px;
-    padding: 10px 15px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: transparent;
+    color: #ddd;
+    cursor: pointer;
+    transition: 0.3s;
+
+  }
+
+  .sidebar ul li:hover,
+  .sidebar ul li.active {
+    background: rgba(255, 215, 0, 0.1);
+    color: gold;
   }
 
   .main {
-    padding: 20px 15px;
+    flex: 1;
+    padding: 40px;
+    animation: fadeIn 1.5s ease;
+    overflow-y: auto;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 30px;
   }
 
   .prompt-bar {
-    position: static;
-    padding: 10px;
-    margin-top: 20px;
-    left: 0;
-    right: 0;
+    position: fixed;
+    bottom: 0;
+    left: 280px;
+    right: 100px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
   }
 
   .prompt-bar form {
-    flex-direction: column;
-    align-items: stretch;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
   }
 
-  .prompt-bar input[type="text"],
-  .prompt-bar button {
-    width: 100%;
+  .prompt-bar input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #2e004f, #000000);
+    color: #fff;
     font-size: 16px;
   }
 
   .prompt-bar button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: gold;
+    color: #1a0033;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .prompt-results {
     margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 12px;
+    max-height: 380px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
   }
 
-  header h1 {
-    font-size: 28px;
+  .prompt-results::-webkit-scrollbar {
+    width: 8px;
   }
 
-  .prompt_result {
-    max-height: unset;
-    margin-bottom: 40px;
+  .prompt-results::-webkit-scrollbar-track {
+    background: #000000;
   }
-}
 
-  </style>
+  .prompt-results::-webkit-scrollbar-thumb {
+    background: #2e004f;
+    border-radius: 4px;
+  }
+
+  .prompt-results::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Animations */
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulseGlow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+  }
+
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+      overflow: auto;
+    }
+
+    .sidebar {
+      width: 100%;
+      padding: 20px 15px;
+      text-align: center;
+      box-shadow: none;
+    }
+
+    .sidebar ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .sidebar ul li {
+      margin: 5px 5px;
+      padding: 10px 15px;
+    }
+
+    .main {
+      padding: 20px 15px;
+    }
+
+    .prompt-bar {
+      position: static;
+      padding: 10px;
+      margin-top: 20px;
+      left: 0;
+      right: 0;
+    }
+
+    .prompt-bar form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .prompt-bar input[type="text"],
+    .prompt-bar button {
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .prompt-bar button {
+      margin-top: 10px;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    .prompt_result {
+      max-height: unset;
+      margin-bottom: 900px;
+    }
+  }
+
+  /* Container */
+  .history-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Heading */
+  .history-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* Unordered list */
+  .history-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* History item */
+  .history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+  }
+
+  /* Selected/highlighted prompt */
+  .history-item.selected {
+    background: #eef;
+    font-weight: bold;
+  }
+
+  /* Link styling */
+  .history-item a {
+    flex: 1;
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .history-item a:hover {
+    text-decoration: underline;
+  }
+
+  /* Delete form */
+  .delete-form {
+    display: inline;
+  }
+
+  /* Delete button */
+  .delete-form button {
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+    padding-left: 10px;
+  }
+
+  .delete-form button:hover {
+    color: darkred;
+  }
+
+  /* No history message */
+  .no-history {
+    color: #666;
+    font-style: italic;
+  }
+</style>
 
 <body>
   <div class="sidebar">
@@ -242,77 +332,139 @@ header p {
     <ul>
       <li class="active">Dashboard</li>
       {% if username != "Guest" %}
-       <li><a href="{% url 'logout' %}">Logout</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      <div class="history-section">
+        <h3>🕘 Your History</h3>
+        <ul>
+          {% for entry in user_history %}
+          <li class="history-item {% if entry.id == selected_prompt_id %}selected{% endif %}">
+            <a href="/?prompt_id={{ entry.id }}">{{ entry.prompt }}</a>
+            <form action="{% url 'delete_history' %}" method="POST" class="delete-form">
+              {% csrf_token %}
+              <input type="hidden" name="prompt_id" value="{{ entry.id }}">
+              <button type="submit" class="delete-btn" title="Delete this entry">🗑</button>
+            </form>
+          </li>
+          {% empty %}
+          <li>No history yet.</li>
+          {% endfor %}
+        </ul>
+      </div>
       {% else %}
-       <li><a href="{% url 'login' %}"style="text-decoration:none; color: inherit;">Login</a></li>
-       <li><a href="{% url 'signin' %}"style="text-decoration: none; color: inherit;">Sign In</a></li>
+      <li><a href="{% url 'login' %}" style="text-decoration:none; color: inherit;">Login</a></li>
+      <li><a href="{% url 'signin' %}" style="text-decoration: none; color: inherit;">Sign In</a></li>
       {% endif %}
     </ul>
   </div>
-<div class="main">
-  <header>
-  <h1>Welcome To Our Healthcare {{ username }}</h1>
-  <p>Here's your daily overview.</p>
-  </header>
+  <div class="main">
+    <header>
+      <h1>Welcome To Our Healthcare {{ username }}</h1>
+      <p>Here's your daily overview.</p>
+    </header>
 
-  <div class="prompt-bar">
-  <form id="promptForm" method="post" action="{% url 'prompt_query' %}">
-    {% csrf_token %}
-    <input type="text" name="prompt" placeholder="Ask anything..." required />
-    <button type="submit">Search</button>
-  </form>
-</div>
+    <div class="prompt-bar">
+      <form id="promptForm" method="post" action="{% url 'prompt_query' %}">
+        {% csrf_token %}
+        <input type="text" name="prompt" placeholder="Ask anything..." required />
+        <button type="submit">Search</button>
+      </form>
+    </div>
 
-<div id="prompt-response" class="prompt_result">
-  {% if prompt_response %}
-    {% for result in prompt_response %}
-      {% if result.type == "medicine" %}
-        <div class="result-card">
-          <h2>💊 {{ prompt_result.name }}</h2>
-            <p><strong>📝 Description:</strong> {{ result.description }}</p>
-              <p><strong>✅ Advantages:</strong></p>
-          <ul>
-          {% for adv in result.advantages %}
+
+
+    <!-- inside #prompt-response -->
+    <div id="prompt-response" class="prompt_result">
+      {% if prompt_response %}
+      {% if prompt_response.type == "medicine" %}
+      <!-- Single medicine result -->
+      <div class="result-card">
+        <h2>💊 {{ prompt_response.name }}</h2>
+        <p><strong>📝 Description:</strong> {{ prompt_response.description }}</p>
+        <p><strong>SYMPTOMS:</strong> {{ prompt_response.symptoms }}</p>
+        <p><strong>✅ Advantages:</strong></p>
+        <ul>
+          {% for adv in prompt_response.advantages %}
           <li>{{ adv }}</li>
           {% endfor %}
-          </ul>
-          <p><strong>⚠️ Disadvantages:</strong></p>
-            <ul>
-            {% for disadv in result.disadvantages %}
-              <li>{{ disadv }}</li>
-            {% endfor %}
-            </ul>
-            <p><strong>🆘 First Aid:</strong> {{ result.first_aid }}</p>
-            <p><strong>🥗 Foods to Eat:</strong> {{ result.foods_to_eat|join:", " }}</p>
-            <p><strong>🚫 Foods to Avoid:</strong> {{ result.foods_to_avoid|join:", " }}</p>
-            <p><strong>🌿 Natural Remedies:</strong> {{ result.natural_remedies|join:", " }}</p><br>
-        </div>
-  {% elif result.type == "hospital" %}
-        <div class="result-card">
-          <h3>🏥 Hospital: {{ result.name }}</h3>
-          <p><strong>Address:</strong> {{ result.address }}</p>
-          <p><strong>Rating:</strong> {{ result.rating }}</p>
-          <p><a href="{{ result.map_link }}" target="_blank" style="color: orange; text-decoration: none;"
-          onmouseover="this.style.color='yellow'" 
-          onmouseout="this.style.color='orange'">
-         📍 View on Map</a></p><br>
-        </div>
+        </ul>
+        <p><strong>⚠️ Disadvantages:</strong></p>
+        <ul>
+          {% for disadv in prompt_response.disadvantages %}
+          <li>{{ disadv }}</li>
+          {% endfor %}
+        </ul>
+        <p><strong>🆘 First Aid:</strong> {{ prompt_response.first_aid }}</p>
+        <p><strong>🥗 Foods to Eat:</strong> {{ prompt_response.foods_to_eat|join:", " }}</p>
+        <p><strong>🚫 Foods to Avoid:</strong> {{ prompt_response.foods_to_avoid|join:", " }}</p>
+        <p><strong>🌿 Natural Remedies:</strong> {{ prompt_response.natural_remedies|join:", " }}</p><br>
+      </div>
+
+      {% elif prompt_response.type == "hospital" %}
+      <!-- Single hospital result -->
+      <div class="result-card">
+        <h3>🏥 Hospital: {{ prompt_response.name }}</h3>
+        <p><strong>Address:</strong> {{ prompt_response.address }}</p>
+        <p><strong>Rating:</strong> {{ prompt_response.rating }}</p>
+        <p>
+          <a href="{{ prompt_response.map_link }}" target="_blank" style="color: orange; text-decoration: none;"
+            onmouseover="this.style.color='yellow'" onmouseout="this.style.color='orange'">📍 View on Map</a>
+        </p><br>
+      </div>
+
+      {% elif prompt_response.0.type %}
+      <!-- Handle list of results from fresh prompt -->
+      {% for result in prompt_response %}
+      {% if result.type == "medicine" %}
+      <div class="result-card">
+        <h2>💊 {{ result.name }}</h2>
+        <p><strong>📝 Description:</strong> {{ result.description }}</p>
+        <p><strong>SYMPTOMS:</strong> {{ result.symptoms }}</p>
+        <p><strong>✅ Advantages:</strong></p>
+        <ul>
+          {% for adv in result.advantages %}<li>{{ adv }}</li>{% endfor %}
+        </ul>
+        <p><strong>⚠️ Disadvantages:</strong></p>
+        <ul>
+          {% for disadv in result.disadvantages %}<li>{{ disadv }}</li>{% endfor %}
+        </ul>
+        <p><strong>🆘 First Aid:</strong> {{ result.first_aid }}</p>
+        <p><strong>🥗 Foods to Eat:</strong> {{ result.foods_to_eat|join:", " }}</p>
+        <p><strong>🚫 Foods to Avoid:</strong> {{ result.foods_to_avoid|join:", " }}</p>
+        <p><strong>🌿 Natural Remedies:</strong> {{ result.natural_remedies|join:", " }}</p><br>
+      </div>
+      {% elif result.type == "hospital" %}
+      <div class="result-card">
+        <h3>🏥 Hospital: {{ result.name }}</h3>
+        <p><strong>Address:</strong> {{ result.address }}</p>
+        <p><strong>Rating:</strong> {{ result.rating }}</p>
+        <p>
+          <a href="{{ result.map_link }}" target="_blank" style="color: orange; text-decoration: none;"
+            onmouseover="this.style.color='yellow'" onmouseout="this.style.color='orange'">📍 View on Map</a>
+        </p><br>
+      </div>
       {% endif %}
-    {% endfor %}
-  {% endif %}
-</div>
+      {% endfor %}
 
+      {% else %}
+      <!-- Fallback: plain text result -->
+      <div class="response-text">
+        {{ prompt_response|linebreaks }}
+      </div>
+      {% endif %}
+      {% endif %}
+    </div>
 
-</div>
+  </div>
 
 </body>
 <script>
-// Optional: You can expand this to handle sidebar clicks, alerts, themes, etc.
-document.querySelectorAll('.sidebar ul li').forEach(item => {
-  item.addEventListener('click', () => {
-    document.querySelectorAll('.sidebar ul li').forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
+  // Optional: You can expand this to handle sidebar clicks, alerts, themes, etc.
+  document.querySelectorAll('.sidebar ul li').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.sidebar ul li').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
   });
-});
 </script>
+
 </html>

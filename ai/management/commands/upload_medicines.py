@@ -25,3457 +25,1714 @@ class Command(BaseCommand):
 
         # Sample data
         medicines = [
-    {
-        "name": "Dexamethasone 1",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
+            {
+                "name": "Paracetamol",
+                "advantages": [
+                    "Effectively reduces fever",
+                    "Minimal gastrointestinal side effects",
+                    "Widely available and affordable",
+                ],
+                "disadvantages": [
+                    "Risk of liver damage with overdose",
+                    "Ineffective against inflammation",
+                ],
+                "description": "Used to reduce fever and relieve mild to moderate pain.",
+                "symptoms": [
+                    "High temperature",
+                    "heat stroke",
+                    "cold",
+                    "Fever",
+                    "Headache",
+                    "Body ache",
+                    "Chills",
+                    "Weakness",
+                ],
+                "foods_to_eat": [
+                    "Soft fruits",
+                    "Broth-based soups",
+                    "Porridge",
+                    "Herbal teas",
+                ],
+                "foods_to_avoid": [
+                    "Spicy foods",
+                    "Fried and oily items",
+                    "Alcohol",
+                    "Caffeine",
+                ],
+                "first_aid": "Administer recommended dose with water and keep the patient hydrated and rested.",
+                "natural_remedies": [
+                    "Lukewarm sponge bath",
+                    "Tulsi tea",
+                    "Ginger and honey tea",
+                ],
+            },
+            {
+                "name": "Ibuprofen",
+                "advantages": [
+                    "Reduces fever and inflammation",
+                    "Effective for body pain",
+                ],
+                "disadvantages": [
+                    "Can cause stomach upset",
+                    "Not suitable for people with ulcers or kidney issues",
+                ],
+                "description": "Used to treat fever, inflammation, and pain, especially in cases of cold and flu.",
+                "symptoms": [
+                    "Elevated body temperature",
+                    "back pain",
+                    "Joint and muscle pain",
+                    "Fatigue",
+                    "Headache",
+                ],
+                "foods_to_eat": ["Oatmeal", "Steamed vegetables", "Warm fluids"],
+                "foods_to_avoid": [
+                    "Acidic foods",
+                    "Carbonated drinks",
+                    "Processed snacks",
+                ],
+                "first_aid": "Give with food or milk to avoid stomach upset.",
+                "natural_remedies": [
+                    "Cold compress",
+                    "Electrolyte fluids",
+                    "Clove and cinnamon tea",
+                ],
+            },
+            {
+                "name": "Nimesulide",
+                "advantages": [
+                    "Strong antipyretic effect",
+                    "Works quickly on fever and pain",
+                ],
+                "disadvantages": [
+                    "Potential liver toxicity",
+                    "Banned in some countries",
+                ],
+                "description": "Used in short-term treatment of acute pain and fever.",
+                "symptoms": [
+                    "Fever with chills",
+                    "Muscle pain",
+                    "Sore throat",
+                    "Runny nose",
+                ],
+                "foods_to_eat": [
+                    "Light rice dishes",
+                    "Clear soups",
+                    "Diluted fruit juices",
+                ],
+                "foods_to_avoid": ["Alcohol", "Fatty foods", "Sugary foods"],
+                "first_aid": "Only use under doctor\u2019s advice due to risk of side effects.",
+                "natural_remedies": [
+                    "Fenugreek seed water",
+                    "Garlic-infused broth",
+                    "Coriander tea",
+                ],
+            },
+            {
+                "name": "Clopidogrel",
+                "description": "Clopidogrel is an antiplatelet medication used to prevent future strokes by preventing clot formation.",
+                "symptoms": [
+                    "stroke",
+                    "sudden weakness",
+                    "numbness",
+                    "speech difficulty",
+                    "vision problems",
+                    "confusion",
+                ],
+                "advantages": [
+                    "Reduces risk of further stroke",
+                    "Effective long-term use",
+                    "Improves circulation",
+                ],
+                "disadvantages": ["Risk of bleeding", "Headache", "Stomach upset"],
+                "first_aid": "Keep patient in recovery position and call emergency services immediately.",
+                "foods_to_eat": [
+                    "Whole grains",
+                    "Berries",
+                    "Green vegetables",
+                    "Low-fat dairy",
+                ],
+                "foods_to_avoid": ["High cholesterol foods", "Alcohol", "Salty snacks"],
+                "natural_remedies": [
+                    "Mild physiotherapy",
+                    "Mindfulness practices",
+                    "Low-salt diet",
+                ],
+            },
+            {
+                "name": "Aspirin (for adults)",
+                "advantages": [
+                    "Reduces fever and inflammation",
+                    "Helps with pain and swelling",
+                ],
+                "disadvantages": [
+                    "Not suitable for children (Reye\u2019s syndrome risk)",
+                    "Can cause stomach bleeding",
+                ],
+                "description": "Used to relieve mild to moderate pain, reduce fever and inflammation.",
+                "symptoms": [
+                    "Headache",
+                    "heart atack",
+                    "Body aches",
+                    "High temperature",
+                    "Fatigue",
+                ],
+                "foods_to_eat": ["Plain toast", "Applesauce", "Warm milk"],
+                "foods_to_avoid": ["Alcohol", "Salicylate-rich foods", "Spicy foods"],
+                "first_aid": "Take with food and avoid in children.",
+                "natural_remedies": [
+                    "Cool towel compress",
+                    "Holy basil infusion",
+                    "Peppermint steam",
+                ],
+            },
+            {
+                "name": "Levothyroxine",
+                "symptoms": [
+                    "Fatigue",
+                    "thyroid",
+                    "hypothyroidism" "Weight gain",
+                    "Cold sensitivity",
+                    "Constipation",
+                    "Depression",
+                ],
+                "description": "Synthetic form of the thyroid hormone T4 used to treat hypothyroidism by replacing deficient hormone levels.",
+                "advantages": [
+                    "Restores normal thyroid hormone levels",
+                    "Improves energy and metabolism",
+                    "Safe for long-term use",
+                ],
+                "disadvantages": [
+                    "Requires lifelong use",
+                    "Can interact with other medications",
+                    "Needs regular monitoring",
+                ],
+                "first_aid": "Take the medicine on an empty stomach at the same time daily; do not skip doses.",
+                "foods_to_eat": [
+                    "Whole grains",
+                    "Fresh fruits",
+                    "Vegetables",
+                    "Lean meats",
+                    "Nuts and seeds",
+                ],
+                "foods_to_avoid": [
+                    "Soy products",
+                    "Cruciferous vegetables (excess)",
+                    "Iron/calcium near dose time",
+                ],
+                "natural_remedies": [
+                    "Ashwagandha",
+                    "Selenium-rich foods",
+                    "Stress reduction (yoga, meditation)",
+                ],
+            },
+            {
+                "name": "Liothyronine",
+                "symptoms": [
+                    "Hair thinning",
+                    "thyroid",
+                    "hypothyridism",
+                    "Low heart rate",
+                    "Dry skin",
+                    "Slow speech",
+                    "Puffy face",
+                ],
+                "description": "Synthetic T3 hormone used for fast thyroid hormone replacement or in combination therapy with T4.",
+                "advantages": ["Quick acting", "Effective when T4 alone doesn’t work"],
+                "disadvantages": [
+                    "Short half-life",
+                    "May cause palpitations",
+                    "Not ideal for heart patients",
+                ],
+                "first_aid": "Watch for signs of overdose like anxiety or palpitations and report immediately.",
+                "foods_to_eat": ["Eggs", "Dairy", "Seaweed", "Iodized salt"],
+                "foods_to_avoid": ["Soy milk", "Caffeine", "Alcohol"],
+                "natural_remedies": [
+                    "Zinc supplements",
+                    "Adequate hydration",
+                    "Consistent sleep patterns",
+                ],
+            },
+            {
+                "name": "Methimazole",
+                "symptoms": [
+                    "Weight loss",
+                    "hyperthyroidism",
+                    "Sweating",
+                    "Rapid heartbeat",
+                    "Tremors",
+                    "Nervousness",
+                ],
+                "description": "Antithyroid drug that inhibits thyroid hormone production for overactive thyroid function.",
+                "advantages": [
+                    "Effective for hyperthyroidism",
+                    "Non-invasive treatment",
+                    "Improves symptoms quickly",
+                ],
+                "disadvantages": [
+                    "Possible liver toxicity",
+                    "Reduces white blood cells",
+                    "Not safe during pregnancy",
+                ],
+                "first_aid": "Discontinue if fever or sore throat occurs; seek immediate medical help.",
+                "foods_to_eat": [
+                    "Low-iodine foods",
+                    "Cruciferous veggies",
+                    "Green tea",
+                ],
+                "foods_to_avoid": ["Iodized salt", "Seafood", "Dairy (in excess)"],
+                "natural_remedies": [
+                    "Bugleweed",
+                    "Avoid caffeine",
+                    "Deep breathing exercises",
+                ],
+            },
+            {
+                "name": "Thyrolar (Liotrix)",
+                "symptoms": [
+                    "Cold intolerance",
+                    "hypothyroidism",
+                    "Constipation",
+                    "Depression",
+                    "Bradycardia",
+                    "Dry skin",
+                ],
+                "description": "Combination of synthetic T4 and T3 hormones in a fixed ratio.",
+                "advantages": [
+                    "Balanced hormone replacement",
+                    "Alternative to Levothyroxine alone",
+                    "Improves quality of life",
+                ],
+                "disadvantages": [
+                    "Hard to customize dose",
+                    "Less commonly prescribed",
+                    "Not suitable for all patients",
+                ],
+                "first_aid": "Follow dosage strictly. Do not adjust without consulting a physician.",
+                "foods_to_eat": [
+                    "Lentils",
+                    "Pumpkin seeds",
+                    "Low-fat dairy",
+                    "Sweet potatoes",
+                ],
+                "foods_to_avoid": ["Kale (uncooked)", "Tofu", "Walnuts near dose time"],
+                "natural_remedies": [
+                    "Evening primrose oil",
+                    "Stress reduction",
+                    "Low-gluten diet",
+                ],
+            },
+            {
+                "name": "Propylthiouracil (PTU)",
+                "symptoms": [
+                    "Bulging eyes",
+                    "thyroid",
+                    "hyperthyroidism",
+                    "Irritability",
+                    "Insomnia",
+                    "Goiter",
+                    "Heat intolerance",
+                ],
+                "description": "Reduces thyroid hormone production and T4 to T3 conversion; used in thyroid storm and pregnancy.",
+                "advantages": [
+                    "Preferred in pregnancy",
+                    "Reduces T3 levels",
+                    "Rapid symptom control",
+                ],
+                "disadvantages": [
+                    "Risk of liver damage",
+                    "Frequent dosing needed",
+                    "Monitoring is essential",
+                ],
+                "first_aid": "Stop use if symptoms of liver damage appear (yellowing of skin/eyes).",
+                "foods_to_eat": [
+                    "Non-iodized salt",
+                    "High-calcium vegetables",
+                    "Cucumber",
+                ],
+                "foods_to_avoid": ["Kelp", "Seaweed", "Processed salty snacks"],
+                "natural_remedies": ["Lemon balm tea", "Calm environment", "Hydration"],
+            },
+            {
+                "name": "Radioactive Iodine (RAI-131)",
+                "symptoms": [
+                    "Neck swelling",
+                    "thyroid",
+                    "hyperthyroidism",
+                    "Difficulty swallowing",
+                    "Fatigue",
+                    "Voice changes",
+                ],
+                "description": "Radioactive treatment to shrink or destroy overactive thyroid tissue or nodules.",
+                "advantages": [
+                    "Non-surgical option",
+                    "Effective with one dose",
+                    "Long-term solution",
+                ],
+                "disadvantages": [
+                    "Can cause hypothyroidism",
+                    "Requires isolation post-treatment",
+                    "Not suitable during pregnancy",
+                ],
+                "first_aid": "Patient must stay isolated for 3-5 days; hydrate and follow radiation safety.",
+                "foods_to_eat": [
+                    "Low-iodine foods (pre-treatment)",
+                    "Soft foods (post-treatment)",
+                ],
+                "foods_to_avoid": ["Seafood", "Iodized salt", "Dairy"],
+                "natural_remedies": ["Rest", "Frequent water intake", "Avoid stress"],
+            },
+            {
+                "name": "Desiccated Thyroid Extract",
+                "symptoms": [
+                    "Slow heart rate",
+                    "thyroid",
+                    "hypothyroidism",
+                    "Cold intolerance",
+                    "Dry skin",
+                    "Menstrual irregularities",
+                ],
+                "description": "Natural extract from pig thyroid glands containing both T3 and T4 hormones.",
+                "advantages": [
+                    "Natural composition",
+                    "Some feel better vs synthetic",
+                    "Contains multiple hormones",
+                ],
+                "disadvantages": [
+                    "Batch inconsistency",
+                    "Harder to dose",
+                    "Not vegan-friendly",
+                ],
+                "first_aid": "Monitor for heart palpitations or anxiety; adjust dose as per doctor.",
+                "foods_to_eat": [
+                    "Leafy greens",
+                    "Fish (moderate iodine)",
+                    "Lean meats",
+                ],
+                "foods_to_avoid": ["Soy", "Cabbage", "Raw cauliflower"],
+                "natural_remedies": [
+                    "Vitamin D from sunlight",
+                    "Magnesium-rich foods",
+                    "Sleep regulation",
+                ],
+            },
+            {
+                "name": "Thyrotropin Alfa",
+                "symptoms": [
+                    "Mild headache",
+                    "thyroid",
+                    "Injection site swelling",
+                    "Nausea",
+                    "Fatigue",
+                ],
+                "description": "Synthetic TSH used to stimulate thyroid tissue for diagnostic scans or cancer treatment.",
+                "advantages": [
+                    "Avoids stopping thyroid meds",
+                    "Short-term use",
+                    "Effective for follow-ups",
+                ],
+                "disadvantages": [
+                    "Expensive",
+                    "Injection-based",
+                    "May cause mild reactions",
+                ],
+                "first_aid": "Monitor for allergies post-injection; report rash or breathing issues.",
+                "foods_to_eat": ["Low-iodine foods (before scan)", "Soft foods"],
+                "foods_to_avoid": ["Seafood", "Iodized products", "Milk"],
+                "natural_remedies": ["Hydration", "Rest", "Gentle physical activity"],
+            },
+            {
+                "name": "Calcium Carbonate",
+                "symptoms": [
+                    "Muscle cramps",
+                    "thyroid",
+                    "Tingling hands",
+                    "Fatigue",
+                    "Weakness",
+                ],
+                "description": "Used to correct calcium deficiency post-thyroid surgery or in hypocalcemia.",
+                "advantages": [
+                    "Replenishes calcium",
+                    "Widely available",
+                    "Quick action",
+                ],
+                "disadvantages": [
+                    "Can cause constipation",
+                    "May interact with thyroid meds",
+                    "Needs spacing from other meds",
+                ],
+                "first_aid": "In severe symptoms like seizures, give IV calcium in hospital setting.",
+                "foods_to_eat": ["Yogurt", "Cheese", "Spinach", "Almonds"],
+                "foods_to_avoid": ["Cola drinks", "Caffeine", "High-oxalate foods"],
+                "natural_remedies": [
+                    "Sunlight for Vitamin D",
+                    "Walking",
+                    "D3 + Magnesium",
+                ],
+            },
+            {
+                "name": "Euthyrox",
+                "symptoms": [
+                    "Low mood",
+                    "Constipation",
+                    "hypothyroidism",
+                    "Fatigue",
+                    "Slow metabolism",
+                    "Dry skin",
+                ],
+                "description": "Brand of levothyroxine used to replace T4 hormone levels in the body.",
+                "advantages": [
+                    "Globally trusted brand",
+                    "Once-a-day dosing",
+                    "Widely available",
+                ],
+                "disadvantages": [
+                    "Dose needs frequent adjustment",
+                    "Slow onset of action",
+                    "Not ideal with inconsistent intake",
+                ],
+                "first_aid": "Missed dose? Take it as soon as remembered unless close to next dose.",
+                "foods_to_eat": [
+                    "Avocados",
+                    "Chia seeds",
+                    "Brown rice",
+                    "Iodine-rich vegetables (moderate)",
+                ],
+                "foods_to_avoid": [
+                    "Cruciferous vegetables (raw, excessive)",
+                    "Iron-fortified cereals (near dose)",
+                ],
+                "natural_remedies": [
+                    "Meditation",
+                    "Adequate hydration",
+                    "Selenium via Brazil nuts",
+                ],
+            },
+            {
+                "name": "Cholestyramine",
+                "symptoms": [
+                    "Rapid heartbeat",
+                    "hyperthyroidism",
+                    "Frequent bowel movements",
+                    "Weight loss",
+                    "Nervousness",
+                ],
+                "description": "Bile acid sequestrant that helps reduce circulating thyroid hormones by binding them in the gut.",
+                "advantages": [
+                    "Supports other treatments",
+                    "Non-hormonal",
+                    "Safe for thyroid storm",
+                ],
+                "disadvantages": [
+                    "Can cause constipation",
+                    "Interferes with vitamin absorption",
+                    "Not a standalone treatment",
+                ],
+                "first_aid": "Ensure proper spacing from other medications and monitor for GI discomfort.",
+                "foods_to_eat": ["Fiber-rich foods", "Bananas", "Boiled potatoes"],
+                "foods_to_avoid": [
+                    "Vitamin supplements (close to dose)",
+                    "Alcohol",
+                    "Greasy foods",
+                ],
+                "natural_remedies": [
+                    "Hydration",
+                    "Probiotic-rich yogurt",
+                    "Low-fat diet",
+                ],
+            },
+            {
+                "name": "Potassium Iodide (SSKI)",
+                "symptoms": [
+                    "Goiter",
+                    "hyperthyroidism",
+                    "Overactive thyroid",
+                    "Palpitations",
+                    "Tremors",
+                ],
+                "description": "Short-term inhibitor of hormone release used before surgery or during a thyroid storm.",
+                "advantages": [
+                    "Fast suppression of thyroid",
+                    "Reduces gland vascularity",
+                    "Used preoperatively",
+                ],
+                "disadvantages": ["Metallic taste", "Rash", "Sore throat"],
+                "first_aid": "Stop use if allergic reaction occurs (rash, swelling, difficulty swallowing).",
+                "foods_to_eat": ["Cucumbers", "Steamed rice", "Boiled carrots"],
+                "foods_to_avoid": [
+                    "Seaweed",
+                    "Iodine-rich foods",
+                    "Vitamin tablets with iodine",
+                ],
+                "natural_remedies": [
+                    "Breathing techniques",
+                    "Ice packs on neck",
+                    "Reduce stress triggers",
+                ],
+            },
+            {
+                "name": "Hydrocortisone",
+                "symptoms": [
+                    "High fever",
+                    "hyperthyroidism",
+                    "Rapid pulse",
+                    "Mental confusion",
+                    "Sweating",
+                ],
+                "description": "Steroid used in thyroid storm to reduce inflammation and hormonal effects.",
+                "advantages": [
+                    "Stabilizes patient",
+                    "Reduces adrenal strain",
+                    "Works with other treatments",
+                ],
+                "disadvantages": [
+                    "Can raise blood sugar",
+                    "Causes mood swings",
+                    "Temporary use",
+                ],
+                "first_aid": "Monitor vitals and ensure hydration; contact hospital in severe episodes.",
+                "foods_to_eat": ["Lean meats", "Boiled veggies", "High-protein meals"],
+                "foods_to_avoid": ["Salty snacks", "Refined sugars", "Fried foods"],
+                "natural_remedies": ["Calm atmosphere", "Lemon water", "Cold therapy"],
+            },
+            {
+                "name": "Dexamethasone",
+                "symptoms": [
+                    "Irritability",
+                    "hyperthyroidism",
+                    "Tachycardia",
+                    "Thyroid storm symptoms",
+                    "Confusion",
+                ],
+                "description": "Steroid that reduces T4 to T3 conversion; used in severe or emergency hyperthyroid states.",
+                "advantages": [
+                    "Reduces hormone effect rapidly",
+                    "Useful in thyroid crisis",
+                    "Anti-inflammatory",
+                ],
+                "disadvantages": [
+                    "Short-term use only",
+                    "Causes mood changes",
+                    "Raises blood sugar",
+                ],
+                "first_aid": "Used under supervision; report signs of insomnia or agitation.",
+                "foods_to_eat": ["Low-sodium diet", "Lean protein", "Applesauce"],
+                "foods_to_avoid": [
+                    "Sugar-rich snacks",
+                    "Caffeine",
+                    "High sodium foods",
+                ],
+                "natural_remedies": [
+                    "Quiet rest environment",
+                    "Cold compress",
+                    "Guided relaxation",
+                ],
+            },
+            {
+                "name": "Lugol’s Iodine Solution",
+                "symptoms": [
+                    "High fever",
+                    "thyroid",
+                    "hyperthyroidism",
+                    "Rapid heartbeat",
+                    "Sweating",
+                    "Restlessness",
+                    "Anxiety",
+                ],
+                "description": "Concentrated iodine solution used in thyroid storm or pre-surgery to suppress hormone release.",
+                "advantages": [
+                    "Fast thyroid suppression",
+                    "Preps gland for surgery",
+                    "Controls hormone surge",
+                ],
+                "disadvantages": ["Taste issues", "GI upset", "Allergic risk"],
+                "first_aid": "Administer under supervision; avoid overuse. Watch for rash, swelling, or breathing difficulty.",
+                "foods_to_eat": ["Cooked veggies", "Plain rice", "Apples"],
+                "foods_to_avoid": ["Iodized salt", "Kelp", "Multivitamins with iodine"],
+                "natural_remedies": [
+                    "Deep breathing",
+                    "Cold compress",
+                    "Electrolyte-rich drinks",
+                ],
+            },
+            {
+                "name": "Beta Blockers (Propranolol)",
+                "symptoms": [
+                    "Tremors",
+                    "Anxiety",
+                    "hyperthroidism",
+                    "Palpitations",
+                    "Increased heart rate",
+                    "Shortness of breath",
+                ],
+                "description": "Manages symptoms like rapid heart rate and tremors caused by hyperthyroidism but doesn’t alter hormone levels.",
+                "advantages": [
+                    "Fast symptom control",
+                    "Reduces anxiety",
+                    "Lowers blood pressure",
+                ],
+                "disadvantages": [
+                    "Does not treat root cause",
+                    "Fatigue or dizziness possible",
+                    "Not suitable for asthma patients",
+                ],
+                "first_aid": "Monitor heart rate and blood pressure; seek help if too low.",
+                "foods_to_eat": [
+                    "Bananas",
+                    "Whole grains",
+                    "Leafy greens",
+                    "Lean meat",
+                ],
+                "foods_to_avoid": [
+                    "Stimulants (caffeine, energy drinks)",
+                    "Alcohol",
+                    "Licorice",
+                ],
+                "natural_remedies": [
+                    "Deep breathing",
+                    "Sleep hygiene",
+                    "Cold compress for palpitations",
+                ],
+            },
+            {
+                "name": "Propranolol",
+                "symptoms": [
+                    "Tremors",
+                    "Palpitations",
+                    "hypothyroidism",
+                    "Sweating",
+                    "Shortness of breath",
+                ],
+                "description": "Beta blocker used to relieve hyperthyroidism symptoms like fast heart rate and anxiety.",
+                "advantages": [
+                    "Quick symptom relief",
+                    "Reduces tremors",
+                    "Helps before thyroid treatment kicks in",
+                ],
+                "disadvantages": [
+                    "Doesn’t treat root cause",
+                    "Not for asthma patients",
+                    "May lower blood pressure too much",
+                ],
+                "first_aid": "Hold medication if heart rate or BP is too low; seek medical evaluation.",
+                "foods_to_eat": ["Oats", "Banana", "Berries", "Low-sodium meals"],
+                "foods_to_avoid": ["Caffeine", "Nicotine", "Sugary drinks"],
+                "natural_remedies": [
+                    "Box breathing",
+                    "Herbal teas",
+                    "Journaling to reduce anxiety",
+                ],
+            },
+            {
+                "name": "Eltroxin",
+                "symptoms": [
+                    "Swelling in face",
+                    "hypothyroidism",
+                    "Dry scalp",
+                    "Forgetfulness",
+                    "Weight gain",
+                    "Menstrual delay",
+                ],
+                "description": "Commonly prescribed levothyroxine brand used to correct T4 deficiency.",
+                "advantages": [
+                    "Effective hormone replacement",
+                    "Improves overall health markers",
+                    "Affordable",
+                ],
+                "disadvantages": [
+                    "Slow-acting",
+                    "Sensitive to food/supplement timing",
+                    "Long adjustment period",
+                ],
+                "first_aid": "Take early in morning on empty stomach with water only.",
+                "foods_to_eat": [
+                    "Low-fat yogurt",
+                    "Whole wheat",
+                    "Carrots",
+                    "Coconut oil",
+                ],
+                "foods_to_avoid": [
+                    "Coffee (right after meds)",
+                    "Calcium-rich food close to dose",
+                ],
+                "natural_remedies": [
+                    "Intermittent fasting (under guidance)",
+                    "Turmeric tea",
+                    "Light cardio",
+                ],
+            },
+            {
+                "name": "Unithroid",
+                "symptoms": [
+                    "Cold hands",
+                    "hypothyroidism",
+                    "Memory issues",
+                    "Brittle nails",
+                    "Irritability",
+                    "Dry skin",
+                ],
+                "description": "Levothyroxine sodium that mimics natural T4 and improves thyroid hormone balance.",
+                "advantages": ["Precise dosing", "FDA-approved", "Well tolerated"],
+                "disadvantages": [
+                    "Consistency required for best results",
+                    "Can take weeks to show effect",
+                ],
+                "first_aid": "Overdose may cause chest pain or anxiety; seek medical help if experienced.",
+                "foods_to_eat": ["Berries", "Cucumber", "Boiled eggs", "Dates"],
+                "foods_to_avoid": [
+                    "Spinach (excess)",
+                    "Iron pills within 4 hours of dose",
+                ],
+                "natural_remedies": [
+                    "Guided breathing",
+                    "Low-sugar diet",
+                    "Chlorophyll water",
+                ],
+            },
+            {
+                "name": "Synthroid",
+                "symptoms": [
+                    "Low energy",
+                    "hypothyroidism",
+                    "Cold sensitivity",
+                    "Weight issues",
+                    "Depression",
+                    "Dry skin",
+                ],
+                "description": "Popular levothyroxine brand that replaces thyroid hormone and helps manage hypothyroidism.",
+                "advantages": [
+                    "Clinically studied",
+                    "Widely prescribed",
+                    "Stable formula",
+                ],
+                "disadvantages": [
+                    "May be affected by food/drug interactions",
+                    "Requires lifelong use",
+                ],
+                "first_aid": "Avoid taking with other medications or food; use with water only.",
+                "foods_to_eat": ["Apples", "Zucchini", "Chicken breast", "Beans"],
+                "foods_to_avoid": [
+                    "High-fiber cereals",
+                    "Calcium-fortified juices",
+                    "Raw broccoli",
+                ],
+                "natural_remedies": [
+                    "Yoga stretches",
+                    "Omega-3 supplements",
+                    "Reduce processed sugar",
+                ],
+            },
+            {
+                "name": "Levoxyl",
+                "symptoms": [
+                    "Constipation",
+                    "hypothyroidism",
+                    "Pale skin",
+                    "Thinning hair",
+                    "Lethargy",
+                    "Feeling cold",
+                ],
+                "description": "T4 hormone replacement therapy that restores metabolic balance in hypothyroid patients.",
+                "advantages": [
+                    "Easily absorbed",
+                    "Well-regulated dose options",
+                    "Good for sensitive patients",
+                ],
+                "disadvantages": [
+                    "Dose precision critical",
+                    "Monitoring every few months",
+                    "Slow metabolism correction",
+                ],
+                "first_aid": "Use same brand consistently; report if switching leads to symptoms.",
+                "foods_to_eat": ["Papaya", "Lettuce", "Quinoa", "Sunflower seeds"],
+                "foods_to_avoid": [
+                    "Raw cabbage",
+                    "Peaches",
+                    "Calcium tablets with dose",
+                ],
+                "natural_remedies": [
+                    "Regular walking",
+                    "Sleep hygiene",
+                    "Mild detox (fruit-based)",
+                ],
+            },
+            {
+                "name": "Tirosint",
+                "symptoms": [
+                    "Brain fog",
+                    "hypothyroidism",
+                    "Weight issues",
+                    "Constipation",
+                    "Brittle hair",
+                    "Slow heart rate",
+                ],
+                "description": "Gel capsule form of levothyroxine with minimal additives, great for allergy-sensitive patients.",
+                "advantages": [
+                    "No dyes or allergens",
+                    "Well tolerated",
+                    "Fast absorption",
+                ],
+                "disadvantages": [
+                    "More expensive",
+                    "Limited availability in some regions",
+                ],
+                "first_aid": "Store properly; sensitive to light and moisture. Take on empty stomach.",
+                "foods_to_eat": ["Beets", "Oats", "Cashews", "Low-fat meats"],
+                "foods_to_avoid": [
+                    "Multivitamins near dose",
+                    "Soy sauce",
+                    "Overcooked broccoli",
+                ],
+                "natural_remedies": [
+                    "Journaling for stress",
+                    "Walking outdoors",
+                    "Vitamin B12 support",
+                ],
+            },
+            {
+                "name": "Atenolol",
+                "symptoms": [
+                    "Shakiness",
+                    "hyperthyroidism",
+                    "Palpitations",
+                    "Heat intolerance",
+                    "Fatigue",
+                ],
+                "description": "Beta-blocker used to relieve symptoms of hyperthyroidism like tremors and fast heartbeat.",
+                "advantages": [
+                    "Reduces pulse",
+                    "Relieves anxiety",
+                    "Safe alternative to propranolol",
+                ],
+                "disadvantages": [
+                    "May cause fatigue",
+                    "Not suitable for asthma",
+                    "Only treats symptoms",
+                ],
+                "first_aid": "Check BP before use; avoid if systolic <90 mmHg or pulse <60 bpm.",
+                "foods_to_eat": [
+                    "Low-sodium snacks",
+                    "Whole grains",
+                    "Broccoli (cooked)",
+                ],
+                "foods_to_avoid": ["Alcohol", "Stimulants", "Licorice"],
+                "natural_remedies": [
+                    "Slow walking",
+                    "Mindful breathing",
+                    "Herbal teas (chamomile, lemon balm)",
+                ],
+            },
+            {
+                "name": "Hyoscine Butylbromide",
+                "description": "Hyoscine Butylbromide is an antispasmodic medicine that relieves abdominal cramps, menstrual pain, and muscle spasms.",
+                "symptoms": [
+                    "cramps",
+                    "abdominal pain",
+                    "muscle spasms",
+                    "menstrual cramps",
+                    "bloating",
+                ],
+                "advantages": [
+                    "Fast relief from cramps",
+                    "Minimal side effects",
+                    "Can be used for stomach or menstrual cramps",
+                ],
+                "disadvantages": ["Dry mouth", "Drowsiness", "Not for long-term use"],
+                "first_aid": "Take with water. Lie down if feeling dizzy. Use hot compress along with medicine if needed.",
+                "foods_to_eat": [
+                    "Bananas",
+                    "Yogurt",
+                    "Hydrating fruits like watermelon",
+                ],
+                "foods_to_avoid": ["Caffeine", "Spicy foods", "Carbonated beverages"],
+                "natural_remedies": [
+                    "Warm compress",
+                    "Chamomile tea",
+                    "Light stretching",
+                ],
+            },
+            {
+                "name": "Dextromethorphan",
+                "description": "Dextromethorphan is a cough suppressant that works by affecting the signals in the brain that trigger the cough reflex.",
+                "symptoms": [
+                    "cough",
+                    "dry throat",
+                    "cold",
+                    "tickling sensation in throat",
+                    "chest irritation",
+                ],
+                "advantages": [
+                    "Suppresses dry cough",
+                    "Available OTC",
+                    "Effective in nighttime cough relief",
+                ],
+                "disadvantages": [
+                    "May cause drowsiness",
+                    "Not suitable for productive (wet) cough",
+                    "Potential for misuse in high doses",
+                ],
+                "first_aid": "Avoid driving after taking; hydrate well to soothe the throat.",
+                "foods_to_eat": ["Warm water", "Honey with warm water", "Licorice tea"],
+                "foods_to_avoid": [
+                    "Cold drinks",
+                    "Dairy (if it increases mucus)",
+                    "Fried and oily foods",
+                ],
+                "natural_remedies": ["Saltwater gargle", "Ginger tea", "Turmeric milk"],
+            },
+            {
+                "name": "Furosemide",
+                "description": "Furosemide is a loop diuretic used to reduce fluid buildup caused by kidney failure. It helps the kidneys remove excess fluid and salt from the body.",
+                "symptoms": [
+                    "kidney failure",
+                    "swelling in legs or ankles",
+                    "fatigue",
+                    "shortness of breath",
+                    "reduced urine output",
+                    "confusion",
+                    "nausea",
+                ],
+                "advantages": [
+                    "Reduces fluid overload",
+                    "Relieves swelling and breathlessness",
+                    "Improves heart and kidney function when used correctly",
+                ],
+                "disadvantages": [
+                    "Electrolyte imbalance",
+                    "Dehydration",
+                    "May lead to low blood pressure",
+                ],
+                "first_aid": "Administer under doctor supervision. Monitor blood pressure and hydration. Encourage rest.",
+                "foods_to_eat": [
+                    "Low-potassium vegetables (cabbage, carrots)",
+                    "Apples",
+                    "Rice and pasta",
+                    "Olive oil",
+                ],
+                "foods_to_avoid": [
+                    "Bananas",
+                    "Oranges",
+                    "Potatoes",
+                    "High-sodium foods",
+                    "Processed meats",
+                ],
+                "natural_remedies": [
+                    "Stay hydrated (as advised by doctor)",
+                    "Follow renal-friendly diet",
+                    "Gentle walking",
+                    "Avoid NSAIDs",
+                ],
+            },
+            {
+                "name": "Moxifloxacin Eye Drops",
+                "description": "Moxifloxacin is a broad-spectrum antibiotic used to treat bacterial eye infections.",
+                "symptoms": [
+                    "redness",
+                    "eye infection",
+                    "itching",
+                    "watering",
+                    "swelling of eyelid",
+                    "discharge from eyes",
+                ],
+                "advantages": [
+                    "Fast relief from bacterial infection",
+                    "Easy application",
+                    "Minimal systemic absorption",
+                ],
+                "disadvantages": [
+                    "Temporary burning sensation",
+                    "Blurred vision post-use",
+                    "May not work on viral infections",
+                ],
+                "first_aid": "Wash hands, apply drops carefully, avoid touching eyes. Use a clean cloth for discharge.",
+                "foods_to_eat": ["Carrots", "Spinach", "Fish oil", "Citrus fruits"],
+                "foods_to_avoid": ["Junk food", "Sugar-rich food"],
+                "natural_remedies": [
+                    "Warm compress",
+                    "Rose water (clean, distilled)",
+                    "Cucumber slices",
+                ],
+            },
+            {
+                "name": "Amoxicillin",
+                "description": "Amoxicillin is an antibiotic commonly used to treat bacterial throat infections.",
+                "symptoms": [
+                    "sore throat",
+                    "throat infection",
+                    "pain while swallowing",
+                    "fever",
+                    "red tonsils",
+                    "swollen lymph nodes",
+                ],
+                "advantages": [
+                    "Kills bacteria quickly",
+                    "Well tolerated",
+                    "Affordable",
+                ],
+                "disadvantages": [
+                    "Antibiotic resistance if misused",
+                    "Allergic reactions in some",
+                    "Gastrointestinal discomfort",
+                ],
+                "first_aid": "Gargle with warm salt water, stay hydrated, avoid cold food.",
+                "foods_to_eat": ["Warm soup", "Honey water", "Herbal teas"],
+                "foods_to_avoid": ["Cold drinks", "Spicy food", "Ice cream"],
+                "natural_remedies": [
+                    "Tulsi tea",
+                    "Ginger-honey paste",
+                    "Saltwater gargle",
+                ],
+            },
+            {
+                "name": "Ketorolac Eye Drops",
+                "description": "Ketorolac is a non-steroidal anti-inflammatory used post cataract surgery to reduce inflammation.",
+                "symptoms": [
+                    "cloudy vision",
+                    "cataract",
+                    "sensitivity to light",
+                    "halos around lights",
+                    "faded colors",
+                ],
+                "advantages": [
+                    "Relieves inflammation",
+                    "Aids recovery post-surgery",
+                    "Non-steroidal",
+                ],
+                "disadvantages": [
+                    "Stinging in eyes",
+                    "Not for long-term use",
+                    "May cause allergic reaction",
+                ],
+                "first_aid": "Wear protective sunglasses, don’t rub the eyes, follow post-surgery care.",
+                "foods_to_eat": [
+                    "Vitamin A-rich foods",
+                    "Leafy greens",
+                    "Eggs",
+                    "Dairy",
+                ],
+                "foods_to_avoid": [
+                    "Sugary snacks",
+                    "Processed foods",
+                    "High-fat meals",
+                ],
+                "natural_remedies": ["Bilberry extract", "Carrot juice", "Amla juice"],
+            },
+            {
+                "name": "Metformin",
+                "description": "Metformin is an oral medication that helps control high blood sugar in people with type 2 diabetes.",
+                "symptoms": [
+                    "frequent urination",
+                    "sugar",
+                    "hyperglycemia",
+                    "increased thirst",
+                    "blurred vision",
+                    "fatigue",
+                    "headache",
+                ],
+                "advantages": [
+                    "Effective glucose control",
+                    "Weight neutral",
+                    "Lowers insulin resistance",
+                ],
+                "disadvantages": [
+                    "Stomach upset",
+                    "Risk of lactic acidosis (rare)",
+                    "Not for kidney patients",
+                ],
+                "first_aid": "If blood sugar is very high, hydrate with water and check blood glucose level. Seek medical help.",
+                "foods_to_eat": [
+                    "Whole grains",
+                    "Non-starchy vegetables",
+                    "Nuts",
+                    "Legumes",
+                ],
+                "foods_to_avoid": ["Refined sugar", "White rice", "Soft drinks"],
+                "natural_remedies": [
+                    "Fenugreek seeds",
+                    "Bitter gourd juice",
+                    "Cinnamon",
+                ],
+            },
+            {
+                "name": "Insulin (Short-acting)",
+                "description": "Short-acting insulin is used to quickly reduce blood glucose levels, commonly used in type 1 diabetes and insulin-dependent type 2.",
+                "symptoms": [
+                    "excessive thirst",
+                    "diabetes",
+                    "frequent urination",
+                    "unexplained weight loss",
+                    "blurred vision",
+                    "slow-healing wounds",
+                ],
+                "advantages": [
+                    "Fast glucose control",
+                    "Life-saving in insulin-dependent diabetes",
+                    "Various types available",
+                ],
+                "disadvantages": [
+                    "Risk of hypoglycemia",
+                    "Injection needed",
+                    "Weight gain possible",
+                ],
+                "first_aid": "If insulin not taken, administer immediately under medical advice. In hypoglycemia, give sugar/glucose.",
+                "foods_to_eat": [
+                    "Whole grains",
+                    "Leafy greens",
+                    "Chia seeds",
+                    "Low GI fruits",
+                ],
+                "foods_to_avoid": ["Sugary desserts", "Fried foods", "White bread"],
+                "natural_remedies": ["Neem", "Jamun seed powder", "Physical activity"],
+            },
+            {
+                "name": "Carbamazepine",
+                "description": "Carbamazepine is an anticonvulsant used to control seizures in epilepsy patients.",
+                "symptoms": [
+                    "recurrent seizures",
+                    "epilepsy",
+                    "fits",
+                    "loss of awareness",
+                    "muscle spasms",
+                    "confusion",
+                ],
+                "advantages": [
+                    "Effective seizure control",
+                    "Mood-stabilizing",
+                    "Available in multiple forms",
+                ],
+                "disadvantages": ["Drowsiness", "Dizziness", "Can cause liver issues"],
+                "first_aid": "During a seizure, protect the person from injury, do not restrain them, and call for emergency help if seizure lasts more than 5 minutes.",
+                "foods_to_eat": ["Leafy greens", "Whole grains", "Fruits"],
+                "foods_to_avoid": ["Alcohol", "Grapefruit", "Caffeine in excess"],
+                "natural_remedies": [
+                    "Yoga and meditation",
+                    "Ketogenic diet",
+                    "Magnesium-rich foods",
+                ],
+            },
+            {
+                "name": "Artemether-Lumefantrine",
+                "description": "A combination antimalarial drug used for the treatment of acute uncomplicated malaria.",
+                "symptoms": [
+                    "fever",
+                    "malaria",
+                    "chills",
+                    "sweating",
+                    "nausea",
+                    "muscle pain",
+                ],
+                "advantages": [
+                    "Fast-acting",
+                    "Well-tolerated",
+                    "Highly effective against Plasmodium falciparum",
+                ],
+                "disadvantages": [
+                    "Dizziness",
+                    "Loss of appetite",
+                    "Sleep disturbances",
+                ],
+                "first_aid": "Keep the patient cool and hydrated. Administer medicine promptly and seek hospital care.",
+                "foods_to_eat": [
+                    "Hydrating fluids",
+                    "High-iron foods",
+                    "Vegetable soups",
+                ],
+                "foods_to_avoid": ["Fatty foods", "Caffeinated drinks", "Alcohol"],
+                "natural_remedies": [
+                    "Neem tea",
+                    "Papaya leaf extract",
+                    "Tulsi (holy basil)",
+                ],
+            },
+            {
+                "name": "Ceftriaxone",
+                "description": "Ceftriaxone is a broad-spectrum antibiotic used to treat typhoid fever.",
+                "symptoms": [
+                    "persistent fever",
+                    "typhoid",
+                    "abdominal pain",
+                    "weakness",
+                    "rash",
+                    "loss of appetite",
+                ],
+                "advantages": [
+                    "Strong against Salmonella",
+                    "Once-daily dose",
+                    "Well-tolerated",
+                ],
+                "disadvantages": [
+                    "Pain at injection site",
+                    "Diarrhea",
+                    "Allergic reactions in some cases",
+                ],
+                "first_aid": "Give oral rehydration salts and keep the person hydrated until professional care is provided.",
+                "foods_to_eat": [
+                    "Bananas",
+                    "Mashed potatoes",
+                    "Boiled rice",
+                    "Apple sauce",
+                ],
+                "foods_to_avoid": ["Spicy foods", "Raw vegetables", "Unfiltered water"],
+                "natural_remedies": [
+                    "Clove water",
+                    "Garlic infusion",
+                    "Cold compress for fever",
+                ],
+            },
+            {
+                "name": "Omeprazole",
+                "description": "Omeprazole is a proton pump inhibitor that reduces stomach acid, helping to heal ulcers.",
+                "symptoms": [
+                    "burning stomach pain",
+                    "ulcer",
+                    "bloating",
+                    "nausea",
+                    "heartburn",
+                    "loss of appetite",
+                ],
+                "advantages": [
+                    "Heals ulcers",
+                    "Reduces acid production",
+                    "Long-lasting relief",
+                ],
+                "disadvantages": [
+                    "Headache",
+                    "Constipation",
+                    "Vitamin B12 deficiency (long-term use)",
+                ],
+                "first_aid": "Avoid spicy food and lie down in an upright position. Use antacids for temporary relief.",
+                "foods_to_eat": ["Bananas", "Oatmeal", "Boiled vegetables"],
+                "foods_to_avoid": ["Spicy foods", "Citrus fruits", "Coffee"],
+                "natural_remedies": [
+                    "Licorice root tea",
+                    "Aloe vera juice",
+                    "Cabbage juice",
+                ],
+            },
+            {
+                "name": "Amlodipine",
+                "description": "Amlodipine is a calcium channel blocker used to lower high blood pressure and prevent heart-related issues.",
+                "symptoms": [
+                    "headaches",
+                    "hypertension",
+                    "high blood pressure",
+                    "pressure",
+                    "blurred vision",
+                    "shortness of breath",
+                    "chest pain",
+                ],
+                "advantages": [
+                    "Effective blood pressure control",
+                    "Once-daily dose",
+                    "Improves circulation",
+                ],
+                "disadvantages": ["Swelling in legs", "Dizziness", "Fatigue"],
+                "first_aid": "Make the person sit, help them relax, and avoid stressful activity. Check BP if device is available.",
+                "foods_to_eat": ["Leafy greens", "Beets", "Low-fat dairy"],
+                "foods_to_avoid": [
+                    "Salt-rich food",
+                    "Processed meats",
+                    "Sugary drinks",
+                ],
+                "natural_remedies": ["Garlic", "Hibiscus tea", "Potassium-rich foods"],
+            },
+            {
+                "name": "Fludrocortisone",
+                "description": "Fludrocortisone is used to treat low blood pressure by helping the body retain sodium.",
+                "symptoms": [
+                    "dizziness",
+                    "hypotension",
+                    "low blood pressure",
+                    "fainting",
+                    "fatigue",
+                    "blurred vision",
+                    "nausea",
+                ],
+                "advantages": [
+                    "Raises blood pressure",
+                    "Improves salt retention",
+                    "Helpful in adrenal insufficiency",
+                ],
+                "disadvantages": ["Swelling", "Headache", "Mood changes"],
+                "first_aid": "Lay the person down and elevate their legs. Give them water or salty snacks if conscious.",
+                "foods_to_eat": ["Salted crackers", "Electrolyte drinks", "Broths"],
+                "foods_to_avoid": ["Alcohol", "Sugary drinks", "Heavy meals"],
+                "natural_remedies": [
+                    "Licorice root",
+                    "Compression stockings",
+                    "Saltwater (small sips)",
+                ],
+            },
+            {
+                "name": "Dicyclomine",
+                "description": "Dicyclomine is an antispasmodic medication used to relieve muscle spasms in the stomach and intestines.",
+                "symptoms": [
+                    "cramping",
+                    "stomach pain",
+                    "abdominal pain",
+                    "bloating",
+                    "gas",
+                    "nausea",
+                ],
+                "advantages": [
+                    "Fast relief of cramps",
+                    "Reduces gut spasms",
+                    "Non-sedative",
+                ],
+                "disadvantages": ["Dry mouth", "Blurred vision", "Drowsiness"],
+                "first_aid": "Avoid solid food, hydrate with warm water. Apply a warm compress to the stomach.",
+                "foods_to_eat": ["Boiled rice", "Bananas", "Toast"],
+                "foods_to_avoid": ["Spicy foods", "Fried food", "Carbonated drinks"],
+                "natural_remedies": ["Ginger tea", "Peppermint oil", "Fennel seeds"],
+            },
+            {
+                "name": "Pantoprazole",
+                "description": "Pantoprazole is a proton pump inhibitor that helps reduce acid reflux, which can cause chest pain.",
+                "symptoms": [
+                    "burning chest pain",
+                    "chest pain",
+                    "acid reflux",
+                    "bloating",
+                    "burping",
+                ],
+                "advantages": [
+                    "Reduces acid quickly",
+                    "Helps heal esophagus",
+                    "Prevents recurrence",
+                ],
+                "disadvantages": ["Diarrhea", "Vitamin B12 deficiency", "Flatulence"],
+                "first_aid": "Sit upright, avoid lying down. Sip water. Take an antacid if available.",
+                "foods_to_eat": ["Oats", "Ginger", "Non-citrus fruits"],
+                "foods_to_avoid": ["Citrus", "Spicy food", "Caffeine"],
+                "natural_remedies": [
+                    "Baking soda in water",
+                    "Licorice root",
+                    "Aloe vera juice",
+                ],
+            },
+            {
+                "name": "Levocetirizine",
+                "description": "Levocetirizine is an antihistamine used to treat symptoms of allergies such as sneezing and runny nose.",
+                "symptoms": [
+                    "sneezing",
+                    "runny nose",
+                    "itchy eyes",
+                    "nasal congestion",
+                ],
+                "advantages": [
+                    "Fast relief",
+                    "Non-drowsy (in most)",
+                    "Long duration of action",
+                ],
+                "disadvantages": ["Dry mouth", "Mild drowsiness", "Headache"],
+                "first_aid": "Move away from allergens, use a saline nasal spray, and rinse face with water.",
+                "foods_to_eat": ["Vitamin C rich fruits", "Local honey", "Green tea"],
+                "foods_to_avoid": [
+                    "Dairy (if sensitive)",
+                    "Processed sugar",
+                    "Cold beverages",
+                ],
+                "natural_remedies": [
+                    "Steam inhalation",
+                    "Saline nasal rinse",
+                    "Turmeric milk",
+                ],
+            },
+            {
+                "name": "Fexofenadine",
+                "description": "Fexofenadine is a non-drowsy antihistamine used to treat allergy symptoms like itching, hives, and runny nose.",
+                "symptoms": [
+                    "itching",
+                    "allergy",
+                    "hives",
+                    "sneezing",
+                    "watery eyes",
+                    "nasal congestion",
+                ],
+                "advantages": [
+                    "Non-sedating",
+                    "24-hour relief",
+                    "Minimal side effects",
+                ],
+                "disadvantages": ["Dry mouth", "Headache", "Nausea"],
+                "first_aid": "Identify and remove the allergen. Rinse with cold water. Take antihistamine if needed.",
+                "foods_to_eat": [
+                    "Vitamin C-rich foods",
+                    "Omega-3 rich foods",
+                    "Quercetin-rich foods like apples",
+                ],
+                "foods_to_avoid": [
+                    "Dairy (if sensitive)",
+                    "Shellfish",
+                    "Processed foods",
+                ],
+                "natural_remedies": [
+                    "Local honey",
+                    "Butterbur extract",
+                    "Nettle leaf tea",
+                ],
+            },
+            {
+                "name": "Ceftriaxone",
+                "description": "Ceftriaxone is a broad-spectrum antibiotic used to treat infections including those related to appendicitis.",
+                "symptoms": [
+                    "abdominal pain",
+                    "appendix",
+                    "fever",
+                    "loss of appetite",
+                    "nausea",
+                    "vomiting",
+                ],
+                "advantages": [
+                    "Effective against many bacteria",
+                    "Fast-acting",
+                    "IV/IM administration",
+                ],
+                "disadvantages": [
+                    "Injection site pain",
+                    "Diarrhea",
+                    "Allergic reactions",
+                ],
+                "first_aid": "Do not eat or drink. Do not apply heat. Seek emergency medical help immediately.",
+                "foods_to_eat": [
+                    "Clear broths",
+                    "Applesauce",
+                    "Rice (post-surgery recovery)",
+                ],
+                "foods_to_avoid": ["Spicy foods", "Fried foods", "High-fat dairy"],
+                "natural_remedies": [
+                    "None – requires surgery. Avoid delaying treatment."
+                ],
+            },
+            {
+                "name": "Atorvastatin",
+                "description": "Atorvastatin is a statin medication used to lower LDL cholesterol and reduce the risk of heart disease.",
+                "symptoms": [
+                    "no visible symptoms",
+                    "cholestrol",
+                    "xanthomas",
+                    "chest pain (if complications)",
+                    "shortness of breath",
+                ],
+                "advantages": ["Lowers LDL", "Raises HDL", "Prevents heart attacks"],
+                "disadvantages": [
+                    "Muscle pain",
+                    "Liver enzyme changes",
+                    "Digestive issues",
+                ],
+                "first_aid": "If experiencing chest pain, take aspirin and seek emergency care. Monitor lipid levels regularly.",
+                "foods_to_eat": [
+                    "Oats",
+                    "Olive oil",
+                    "Fatty fish",
+                    "Fruits and vegetables",
+                ],
+                "foods_to_avoid": [
+                    "Red meat",
+                    "Fried foods",
+                    "Trans fats",
+                    "Full-fat dairy",
+                ],
+                "natural_remedies": ["Garlic", "Green tea", "Psyllium husk"],
+            },
+            {
+                "name": "Benzocaine Gel",
+                "description": "Benzocaine gel is a topical anesthetic that provides temporary relief from pain caused by mouth ulcers.",
+                "symptoms": [
+                    "painful sore in the mouth",
+                    "mouth ulcer",
+                    "redness",
+                    "swelling",
+                    "difficulty eating",
+                    "burning sensation",
+                ],
+                "advantages": [
+                    "Quick pain relief",
+                    "Easy topical application",
+                    "Reduces irritation",
+                ],
+                "disadvantages": [
+                    "Temporary relief",
+                    "Possible allergic reaction",
+                    "May numb surrounding tissue",
+                ],
+                "first_aid": "Apply gel directly to the ulcer after drying the area. Avoid spicy or acidic foods.",
+                "foods_to_eat": ["Yogurt", "Cold milk", "Mashed potatoes", "Bananas"],
+                "foods_to_avoid": ["Spicy foods", "Citrus fruits", "Salty snacks"],
+                "natural_remedies": ["Honey", "Coconut oil", "Aloe vera gel"],
+            },
+            {
+                "name": "Amoxicillin",
+                "description": "Amoxicillin is a common antibiotic used to treat middle ear infections caused by bacteria.",
+                "symptoms": [
+                    "earache",
+                    "ear pain",
+                    "hearing loss",
+                    "fever",
+                    "fluid drainage",
+                    "irritability in children",
+                ],
+                "advantages": [
+                    "Effective against common ear bacteria",
+                    "Well-tolerated",
+                    "Fast-acting",
+                ],
+                "disadvantages": ["Allergic reactions", "Diarrhea", "Yeast infections"],
+                "first_aid": "Apply warm compress to the ear. Keep the head elevated. Consult a doctor for antibiotics.",
+                "foods_to_eat": ["Warm soups", "Soft foods", "Ginger tea"],
+                "foods_to_avoid": [
+                    "Cold drinks",
+                    "Sugary snacks",
+                    "Dairy (if mucus-producing)",
+                ],
+                "natural_remedies": [
+                    "Garlic oil drops",
+                    "Warm olive oil",
+                    "Basil extract",
+                ],
+            },
+            {
+                "name": "Rabies Vaccine (Post-Exposure Prophylaxis)",
+                "description": "The rabies vaccine is administered after a potential exposure to prevent the virus from infecting the central nervous system.",
+                "symptoms": [
+                    "fever",
+                    "rabies",
+                    "headache",
+                    "excess salivation",
+                    "muscle spasms",
+                    "paralysis",
+                ],
+                "advantages": [
+                    "Prevents rabies if given early",
+                    "Highly effective",
+                    "Safe for all age groups",
+                ],
+                "disadvantages": [
+                    "Multiple doses required",
+                    "Possible soreness at injection site",
+                    "Rare allergic reactions",
+                ],
+                "first_aid": "Immediately wash the bite with soap and water for 15 minutes. Seek emergency medical help for vaccination.",
+                "foods_to_eat": ["High-protein foods", "Fruits", "Vegetables"],
+                "foods_to_avoid": ["Alcohol", "Excess sugar", "Caffeinated beverages"],
+                "natural_remedies": [
+                    "None – rabies requires immediate medical intervention"
+                ],
+            },
+            {
+                "name": "Ferrous Sulfate",
+                "description": "Ferrous sulfate is an iron supplement used to treat iron deficiency anemia and restore healthy red blood cell levels.",
+                "symptoms": [
+                    "fatigue",
+                    "anaemia",
+                    "pale skin",
+                    "shortness of breath",
+                    "dizziness",
+                    "cold hands and feet",
+                ],
+                "advantages": [
+                    "Restores iron levels",
+                    "Increases energy",
+                    "Improves hemoglobin production",
+                ],
+                "disadvantages": ["Constipation", "Stomach upset", "Dark stools"],
+                "first_aid": "Take iron supplement with food to minimize side effects. Stay hydrated and avoid tea/coffee after intake.",
+                "foods_to_eat": ["Spinach", "Red meat", "Lentils", "Beetroot"],
+                "foods_to_avoid": [
+                    "Tea",
+                    "Coffee",
+                    "Calcium-rich foods (during supplement intake)",
+                ],
+                "natural_remedies": ["Sesame seeds", "Dates", "Moringa leaves"],
+            },
+            {
+                "name": "Donepezil",
+                "description": "Donepezil is a medication used to manage symptoms of memory loss in Alzheimer's and other cognitive disorders.",
+                "symptoms": [
+                    "forgetfulness",
+                    "amnesia",
+                    "confusion",
+                    "difficulty learning new things",
+                    "trouble recognizing people",
+                    "disorientation",
+                ],
+                "advantages": [
+                    "Improves memory function",
+                    "Slows cognitive decline",
+                    "Well-tolerated",
+                ],
+                "disadvantages": ["Nausea", "Insomnia", "Muscle cramps"],
+                "first_aid": "Keep the person calm and safe. Orient them to surroundings. Seek medical evaluation if persistent.",
+                "foods_to_eat": ["Walnuts", "Blueberries", "Fatty fish", "Turmeric"],
+                "foods_to_avoid": ["Excess sugar", "Alcohol", "Highly processed foods"],
+                "natural_remedies": [
+                    "Ashwagandha",
+                    "Ginkgo biloba",
+                    "Brahmi (Bacopa monnieri)",
+                ],
+            },
+            {
+                "name": "Sertraline",
+                "description": "Sertraline is an antidepressant in the selective serotonin reuptake inhibitor (SSRI) class used to treat depression, anxiety, and related mental disorders.",
+                "symptoms": [
+                    "persistent sadness",
+                    "mental disorder",
+                    "loss of interest",
+                    "fatigue",
+                    "restlessness",
+                    "difficulty concentrating",
+                ],
+                "advantages": ["Improves mood", "Reduces anxiety", "Non-addictive"],
+                "disadvantages": ["Nausea", "Insomnia", "Sexual dysfunction"],
+                "first_aid": "In case of panic attacks or distress, encourage slow breathing and grounding techniques. Seek support or helpline if needed.",
+                "foods_to_eat": [
+                    "Whole grains",
+                    "Leafy greens",
+                    "Fatty fish",
+                    "Berries",
+                ],
+                "foods_to_avoid": ["Alcohol", "Caffeine", "Sugary foods"],
+                "natural_remedies": [
+                    "Meditation",
+                    "Lavender oil",
+                    "Omega-3 supplements",
+                ],
+            },
+            {
+                "name": "Pantoprazole",
+                "description": "Pantoprazole is a proton pump inhibitor that reduces stomach acid and helps manage symptoms in patients with hiatal hernia or GERD.",
+                "symptoms": [
+                    "heartburn",
+                    "hernia",
+                    "acid reflux",
+                    "chest discomfort",
+                    "difficulty swallowing",
+                    "abdominal pain",
+                ],
+                "advantages": [
+                    "Reduces acid production",
+                    "Relieves reflux symptoms",
+                    "Prevents esophageal damage",
+                ],
+                "disadvantages": [
+                    "Headache",
+                    "Diarrhea",
+                    "Vitamin B12 deficiency (long-term use)",
+                ],
+                "first_aid": "Avoid lying down after meals. Elevate head while sleeping. Take prescribed antacids or PPIs.",
+                "foods_to_eat": [
+                    "Oatmeal",
+                    "Non-citrus fruits",
+                    "Lean proteins",
+                    "Green vegetables",
+                ],
+                "foods_to_avoid": ["Spicy foods", "Caffeine", "Citrus", "Chocolate"],
+                "natural_remedies": [
+                    "Chamomile tea",
+                    "Licorice root",
+                    "Aloe vera juice (small amounts)",
+                ],
+            },
         ]
-    },
-    {
-        "name": "Mupirocin 2",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 3",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 4",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 5",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 6",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 7",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 8",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 9",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 10",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 11",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 12",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 13",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 14",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 15",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 16",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 17",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 18",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 19",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 20",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 21",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 22",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 23",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 24",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 25",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 26",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 27",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 28",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 29",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 30",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 31",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 32",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 33",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 34",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 35",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 36",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 37",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 38",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 39",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 40",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 41",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 42",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 43",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 44",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 45",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 46",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 47",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 48",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 49",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 50",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 51",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 52",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 53",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 54",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 55",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 56",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 57",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 58",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 59",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 60",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 61",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 62",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 63",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 64",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 65",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 66",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 67",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 68",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 69",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 70",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 71",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 72",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 73",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 74",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 75",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 76",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 77",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 78",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 79",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 80",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 81",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 82",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 83",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 84",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 85",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 86",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 87",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 88",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 89",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 90",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 91",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 92",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 93",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 94",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 95",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 96",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    },
-    {
-        "name": "Dexamethasone 97",
-        "advantages": [
-            "Reduces inflammation",
-            "Treats allergic reactions",
-            "Manages autoimmune diseases"
-        ],
-        "disadvantages": [
-            "May raise blood sugar",
-            "Possible mood changes",
-            "Increased infection risk"
-        ],
-        "first_aid": "Take as prescribed, avoid abrupt withdrawal",
-        "foods_to_eat": [
-            "Whole grains",
-            "Lean meats",
-            "Leafy greens"
-        ],
-        "foods_to_avoid": [
-            "High sugar foods",
-            "Alcohol",
-            "Fried snacks"
-        ],
-        "natural_remedies": [
-            "Turmeric",
-            "Ginger",
-            "Licorice root"
-        ],
-        "description": "Dexamethasone is a corticosteroid used to treat inflammation, allergic conditions, and certain cancers. It suppresses the immune response.",
-        "symptoms": [
-            "inflammation",
-            "allergic reactions",
-            "autoimmune disorders"
-        ]
-    },
-    {
-        "name": "Mupirocin 98",
-        "advantages": [
-            "Topical use with minimal systemic absorption",
-            "Effective against skin infections",
-            "Broad-spectrum antibiotic"
-        ],
-        "disadvantages": [
-            "May cause skin irritation",
-            "Resistance can develop with overuse",
-            "Burning sensation possible"
-        ],
-        "first_aid": "Clean affected area before applying",
-        "foods_to_eat": [
-            "Vitamin C-rich foods",
-            "High-protein diet"
-        ],
-        "foods_to_avoid": [
-            "Processed sugar",
-            "Greasy food"
-        ],
-        "natural_remedies": [
-            "Tea tree oil",
-            "Aloe vera",
-            "Honey"
-        ],
-        "description": "Mupirocin is an antibiotic cream used to treat skin infections like impetigo. It works by stopping the growth of certain bacteria.",
-        "symptoms": [
-            "skin infections",
-            "impetigo",
-            "minor wounds"
-        ]
-    },
-    {
-        "name": "Escitalopram 99",
-        "advantages": [
-            "Improves mood and energy",
-            "Reduces anxiety",
-            "Fewer side effects than other SSRIs"
-        ],
-        "disadvantages": [
-            "Drowsiness",
-            "Sexual dysfunction",
-            "Possible weight gain"
-        ],
-        "first_aid": "Take at same time daily, do not stop abruptly",
-        "foods_to_eat": [
-            "Omega-3 fatty acids",
-            "Whole grains",
-            "Berries"
-        ],
-        "foods_to_avoid": [
-            "Alcohol",
-            "Caffeine",
-            "Refined sugar"
-        ],
-        "natural_remedies": [
-            "Meditation",
-            "Chamomile tea",
-            "Exercise"
-        ],
-        "description": "Escitalopram is an antidepressant used to treat depression and generalized anxiety disorder. It restores the balance of serotonin in the brain.",
-        "symptoms": [
-            "depression",
-            "anxiety",
-            "panic disorder"
-        ]
-    },
-    {
-        "name": "Rosuvastatin 100",
-        "advantages": [
-            "Well-tolerated",
-            "Effective for lowering cholesterol",
-            "Reduces risk of heart attack"
-        ],
-        "disadvantages": [
-            "May cause headache",
-            "Can affect liver function",
-            "Muscle pain possible"
-        ],
-        "first_aid": "Take with water, monitor for muscle weakness",
-        "foods_to_eat": [
-            "Oats",
-            "Boiled vegetables",
-            "Brown rice"
-        ],
-        "foods_to_avoid": [
-            "Grapefruit",
-            "Red meat",
-            "Fried foods"
-        ],
-        "natural_remedies": [
-            "Garlic",
-            "Omega-3 rich foods",
-            "Green tea"
-        ],
-        "description": "Rosuvastatin is used to lower bad cholesterol and fats and raise good cholesterol in the blood. It helps prevent heart disease and stroke.",
-        "symptoms": [
-            "high cholesterol",
-            "heart disease",
-            "stroke risk"
-        ]
-    }
-                ]
 
         for medicine in medicines:
             collection.delete_many({"name": medicine["name"]})
